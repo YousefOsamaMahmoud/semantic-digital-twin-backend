@@ -1,17 +1,10 @@
-
-
-### Step 1: Copy this perfectly formatted Markdown
-
-**Important:** Do not just highlight the text with your mouse. Look at the top right corner of the black box below. You will see a little **"Copy code"** button. Click that button to grab the raw text perfectly!
-
-```markdown
 # SLA Sandbox Feature: Full Documentation & Explanation
 
 Project: **Semantic Digital Twin for Raw Material Supply Detection and Resolution**
 
 This document provides a detailed breakdown of the backend structure, code logic, and data models implemented for the **SLA Sandbox** skeleton and Neo4j Database integration.
 
----
+----------------------------------------------------------------------------------------------------
 
 ## 1. Project Architecture (The 3-Tier Pattern)
 
@@ -32,7 +25,9 @@ To ensure scalability and maintain clean code, the project strictly follows a **
     * **Logic:** It executes Cypher queries to save or retrieve nodes and relationships via AuraDB.
     * **Current State:** Fully implemented with `python-dotenv` and the `neo4j` Python driver.
 
----
+
+----------------------------------------------------------------------------------------------------
+
 
 ## 2. Neo4j Database Layer (Layer 3 Walkthrough)
 
@@ -61,7 +56,9 @@ To ensure scalability and maintain clean code, the project strictly follows a **
 
 *Note: Uses `MERGE` ensuring idempotency; re-uploading the same supplier/material updates properties instead of creating duplicates.*
 
----
+
+----------------------------------------------------------------------------------------------------
+
 
 ## 3. Data Models (Schemas)
 
@@ -80,7 +77,9 @@ This model represents the structured data extracted from a PDF contract.
 | `lead_time_days` | `int` | Delivery promise in days | Must be greater than 0 |
 | `penalty_clause` | `str` | Text describing the fine | At least 1 character |
 
----
+
+----------------------------------------------------------------------------------------------------
+
 
 ## 4. API Endpoints
 
@@ -95,13 +94,17 @@ This model represents the structured data extracted from a PDF contract.
 * **File:** `api/sandbox.py`
 * **Description:** Receives the contract data, validates it, and triggers the database repository to securely build the graph in AuraDB.
 
----
+
+----------------------------------------------------------------------------------------------------
+
 
 ## 5. Why the `__init__.py` files?
 
 In Python, folders like `api/` and `services/` aren't automatically seen as "packages." By adding an empty `__init__.py` file to each folder, we tell Python: *"Treat this folder as a module so I can import code from it."*
 
----
+
+----------------------------------------------------------------------------------------------------
+
 
 ## 6. How to Run, Test & Troubleshoot
 
@@ -150,7 +153,7 @@ MATCH (s:Supplier)-[r:SUPPLIES]->(m:RawMaterial) RETURN s, r, m
 
 ```
 
----
+----------------------------------------------------------------------------------------------------
 
 ## 7. Next Steps
 
