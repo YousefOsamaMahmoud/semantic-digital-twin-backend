@@ -1,0 +1,15 @@
+MASTER SUPPLY AND SERVICE LEVEL AGREEMENT
+Document Reference: SLA-ACME-2026-V2
+Effective Date: March 15, 2026
+
+PARTIES
+This agreement is entered into by and between Global Manufacturing Inc. (hereinafter "Buyer") and Acme Materials Corp (hereinafter "Supplier").
+
+DELIVERY AND LEAD TIMES
+The Supplier agrees to fulfill all standard purchase orders within a strict maximum turnaround window. The standard delivery SLA lead time is established at exactly seventy-two (72) hours from the moment the electronic purchase order is acknowledged by the Supplier's ERP system.
+
+LIQUIDATED DAMAGES FOR DELAY
+Time is of the essence. In the event that the Supplier fails to deliver the materials within the aforementioned 72-hour window, the Supplier shall be liable for a delay penalty. The Buyer shall deduct a sum of $1,250.00 USD for each full calendar day the shipment is delayed beyond the agreed delivery date. Furthermore, for any individual units missing from the manifest upon arrival (short-shipments), a missed item penalty of $150.00 USD per missing unit shall be applied.
+
+QUALITY ASSURANCE AND DEFECTS
+The Supplier warrants that all raw materials will meet the strict chemical purity standards outlined in Appendix A. The minimum acceptable quality threshold is ninety-eight percent (98.0%) defect-free yield per batch. Should the quality score fall below this threshold, a quality penalty rate equal to fifteen percent (15%) of the total order value will be withheld by the Buyer.

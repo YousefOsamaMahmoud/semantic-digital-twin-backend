@@ -1,0 +1,14 @@
+﻿SERVICE LEVEL AGREEMENT (SLA)
+Document ID: SLA-GC-2026-101
+Parties: The Manufacturer ("Buyer") and Global Chemicals Co. ("Supplier_Incumbent")
+Effective Date: January 1, 2026
+1. PURPOSE AND SCOPE
+This agreement governs the supply of "Critical_Component" and "Material_X" to the Buyer's production facilities.
+2. DELIVERY WINDOWS AND LEAD TIME
+The Supplier agrees to a standard SLA Lead Time of forty-eight (48) hours from the moment a Purchase Order (PO) is issued. Deliveries arriving after this window will be classified as a Late Delivery.
+3. PENALTY CLAUSES
+3.1 Delay Penalties: In the event of a Late Delivery, the Supplier shall be subject to a Delay Penalty Rate of $500.00 USD per day of delay.
+3.2 Missed Item Penalties: The Supplier must fulfill 100% of the Ordered Quantity. Any UnderShipment will incur a Missed Item Penalty Rate of $45.00 USD per missing unit.
+3.3 Quality Thresholds: The Supplier guarantees that goods will arrive free of defect. The Minimum Quality Threshold is set at 0.95 (95% intact). If the Quality Score of a delivery falls below this threshold, it will be classified as Damaged Goods. The Quality Penalty Rate for such violations shall be calculated at 0.15 (15%) of the Total Order Cost.
+4. TERMINATION
+If the Supplier's Reliability Score falls below 0.50, the Buyer reserves the right to immediately terminate this agreement and route orders to an Alternative Supplier.

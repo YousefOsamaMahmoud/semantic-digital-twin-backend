@@ -1,0 +1,31 @@
+# Environment Variables & Secrets (CRITICAL)
+.env
+.env.local
+.env.*
+*.env
+
+# Python Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+
+# Python caching and compiled files
+**/__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Heavy Data Science Files (Prevents pushing massive datasets)
+**/data_Lake/
+*.csv
+*.xlsx
+*.pkl
+.ipynb_checkpoints/
