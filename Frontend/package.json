@@ -1,0 +1,11 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "Wrapper package to start the react app",
+  "scripts": {
+    "start": "cd my-app && npm start",
+    "build": "cd my-app && npm run build",
+    "test": "cd my-app && npm test",
+    "install": "cd my-app && npm install"
+  }
+}

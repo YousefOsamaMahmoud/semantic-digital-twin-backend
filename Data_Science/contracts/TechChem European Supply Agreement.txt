@@ -1,0 +1,12 @@
+SUPPLY CHAIN PERFORMANCE CONTRACT - EU REGION
+Doc ID: SLA_TechChem_EU_998
+Vendor: TechChem EU Ltd.
+
+SECTION A: LOGISTICS AND FULFILLMENT
+TechChem EU Ltd. commits to a rapid-response fulfillment model for all critical liquid chemical supplies. The baseline SLA lead time is strictly set at 48 hours for all European ground transit routes.
+
+SECTION B: NON-COMPLIANCE AND FINANCIAL RECOURSE
+Failure to adhere to the fulfillment window will trigger automatic financial recourse. The delay penalty rate is assessed at $850 per day of transit delay. In cases of under-shipment, where the volume delivered is less than the volume ordered, a missed item penalty rate of $65.50 per unit will be levied against the current invoice.
+
+SECTION C: QUALITY CONTROL METRICS
+Material integrity is paramount. TechChem EU Ltd. must maintain a rolling minimum quality threshold of 0.995 (99.5%). Deliveries containing compromised, contaminated, or damaged goods that cause the batch to drop below this threshold will incur a severe quality penalty rate of 0.25 (25%) against the shipment's total cost.

@@ -1,0 +1,23 @@
+* To Start
+
+1) First Step: Open GraphDB
+2) Second Step: Open cmd -> "cd C:\Users\Yousef\Desktop\AI-Supply-Chain-Risk-Engine\Backend"
+3) Third Step: Start The Virtual Environment -> "venv\Scripts\activate"
+4) Fourth Step: Start The Server -> "uvicorn main:app --reload --port 8001"
+5) Fifth Step: Open your browser -> "http://localhost:8001/docs"
+
+* To Stop
+
+1) First Step: Click inside the cmd window
+2) Second Step: Press "Ctrl + C" to stop the server (type Y and hit Enter if it asks)
+3) Third Step: Stop The Virtual Environment -> "deactivate"
+4) Fourth Step: Close the cmd window and close GraphDB
+
+
+To Rename Any Folder:
+
+1) Delete the venv folder.
+2) Open cmd in your Backend folder.
+3) Run python -m venv venv (Buy a new toolbox with the updated address).
+4) Run venv\Scripts\activate (Open it).
+5) Run pip install -r requirements.txt (Fill it with tools).

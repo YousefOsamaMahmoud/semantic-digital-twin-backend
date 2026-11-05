@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="http://www.semanticweb.org/youssef/ontologies/2026/1/trail1" uri="file:/C:/Users/waelm/Documents/GitHub/Graduation-Project/ontology/Semantic%20Digital%20Twin%20Project.rdf"/>
+    <uri id="User Entered Import Resolution" name="http://example.org/ontology" uri="file:/C:/Users/waelm/Documents/GitHub/Graduation-Project/ontology/Semantic%20Digital%20Twin%20Project.rdf"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public">
+        <uri id="Automatically generated entry, Timestamp=1781961546047" name="http://example.org/ontology" uri="Semantic%20Digital%20Twin%20Project.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1781961546047" name="http://example.org/ontology/" uri="test.rdf"/>
+    </group>
+</catalog>

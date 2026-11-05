@@ -1,0 +1,3111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns="http://example.org/ontology#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+   xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+>
+  <rdf:Description rdf:nodeID="N0234a0a5effa43489c601ad9492b9e8a">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#fulfills"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/po"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N33306f3a5e8f418fbfb4893de969e00a">
+    <swrl:argument2 rdf:resource="http://example.org/ontology/agreedTime"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/sla"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasSLALeadTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N107239131080494cb4b330581ff7f4f3">
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#affectsProcess"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/p"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/m"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc178929864fa4dd8aaa02d2d1ba787f0">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/mat"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#isSuppliedBy"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/sup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasSustainabilityRating">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#Supplier"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#BusinessActor"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nea7a18f4a4664530ab9618f068bf040d">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/sla"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/sup"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasSLA"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N82484fb0fb5c404faf606a3afaf6d72d">
+    <swrl:classPredicate rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0a39e0913979435798512fbcc5708782">
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasRiskStatus"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:argument2>Confirmed</swrl:argument2>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#isRecommended">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#Supplier"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#BusinessActor"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#AlternativeSupplier"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#replaces">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://example.org/ontology#BusinessActor"/>
+    <rdfs:range rdf:resource="http://example.org/ontology#IncumbentSupplier"/>
+    <rdfs:range rdf:resource="http://example.org/ontology#Supplier"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#Supplier"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#BusinessActor"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#AlternativeSupplier"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3ba58d36234040ac85eac24879cfcd02">
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#isTriggeredBy"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/delayEvent"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/d"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N824e9e73d15343b5a0725c1c9c67ab4a">
+    <swrl:arguments rdf:nodeID="N8bda66798c4d482d969c87246fadd138"/>
+    <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N751e3471f7ae4f02b46cfd8d0a3dd9ab">
+    <swrl:classPredicate rdf:resource="http://example.org/ontology#SLAViolation"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N07bf652d50a54b189f96f7a223ebd2f5">
+    <swrl:argument2>UnderShipment</swrl:argument2>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasViolationType"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4d519599682d4ad0a3de731e02c35bc6">
+    <rdfs:comment></rdfs:comment>
+    <swrl:head rdf:nodeID="N13a23e54d1ea41779e657baecaece470"/>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+    <rdfs:label>SLADelayPredictionCustoms</rdfs:label>
+    <swrl:body rdf:nodeID="Nb2f44a38115e42f5bf68040ec983a8bf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#isSuppliedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://example.org/ontology#Supplier"/>
+    <rdfs:range rdf:resource="http://example.org/ontology#BusinessActor"/>
+    <owl:inverseOf rdf:resource="http://example.org/ontology#supplies"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#RawMaterial"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd52c4b3f6df443bf9703a5a3ece4ee8a">
+    <rdf:rest rdf:nodeID="N5a2dca2f93424eb99d0f27dba82796b5"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="Na1899ff0e7e54a829a00a1990e6a6f3e"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasViscosity">
+    <rdfs:domain rdf:resource="http://example.org/ontology#RawMaterial"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne299cac5f130494daf467b17fadce320">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/po"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#issuedTo"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/sup"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbb79f70014f14e5c954eca7b8e89954c">
+    <swrl:arguments rdf:nodeID="N4e7ebc2e927444eebe00cb34e2683bcc"/>
+    <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#multiply"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#receivesInstructionsFor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://example.org/ontology#Route"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#BusinessActor"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfa5abe32398d43d39179e79a97ab1e26">
+    <rdf:rest rdf:nodeID="Ndeb8f00e448748ec89238e700de095bf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="Nb86c7ee8322f411ab3ed2eea2dc2953b"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1c44d107eec7406ea032400221a1a0b9">
+    <rdf:first rdf:nodeID="N501efea78dc247ed8b35879143bdcb8a"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="N8c2c8c6d5819462a858a76a4f54ade41"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#fulfills">
+    <rdfs:domain rdf:resource="http://example.org/ontology#Event"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://example.org/ontology#PurchaseOrder"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N526d4a13d33a4c6895595a81a34a5bb9">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="N1e49e13b5d09409da4e72438da91c595"/>
+    <rdf:rest rdf:nodeID="Nc2596336550d45dc9e9372b81e18a52d"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8b5aec76d54a4d28886c02410eed36ff">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://example.org/ontology/planDep"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Structural_Steel_Sheet">
+    <hasInventoryStock rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</hasInventoryStock>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/ontology#RiskEvent"/>
+    <rdf:type rdf:resource="http://example.org/ontology#RawMaterial"/>
+    <rdf:type rdf:resource="http://example.org/ontology#Event"/>
+    <rdf:type rdf:resource="http://example.org/ontology#DelayEvent"/>
+    <affectsProcess rdf:resource="http://example.org/ontology#Electronics_SubAssembly_Line"/>
+    <hasDelayDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</hasDelayDuration>
+    <hasSafetyStockLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</hasSafetyStockLevel>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nded3c77c6b3c40559028ebddc2e3bdc3">
+    <swrl:arguments rdf:nodeID="N852e4f49adcd4cd09ed632659f6c2a4a"/>
+    <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Storm_Disruption_Log">
+    <rdf:type rdf:resource="http://example.org/ontology#Event"/>
+    <rdf:type rdf:resource="http://example.org/ontology#DelayEvent"/>
+    <rdf:type rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/ontology#RiskEvent"/>
+    <hasDelayDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</hasDelayDuration>
+    <isTriggeredBy rdf:resource="http://example.org/ontology#Truck_VoltSupply_Main"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N336ccfdda4b345c59c6489c9d582ba43">
+    <rdf:rest rdf:nodeID="N57f37c7199b346d5abf8bd871125e561"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="N03c359b98719407daff4cf3b525f4498"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N660e6e3176434fefade682e3818244ce">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+    <swrl:body rdf:nodeID="N50851363cec84effa352cab606fff1dc"/>
+    <rdfs:label>ReliabilityHigh</rdfs:label>
+    <swrl:head rdf:nodeID="N933aaceae6de4d048f80c3d82f51e823"/>
+    <rdfs:comment>supplier score &gt; 0.8</rdfs:comment>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc7703879c41248d8b2fa1e1448942dea">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/p"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:argument2>Confirmed</swrl:argument2>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasRiskStatus"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4e7ebc2e927444eebe00cb34e2683bcc">
+    <rdf:first rdf:resource="http://example.org/ontology/penalty"/>
+    <rdf:rest rdf:nodeID="N427ca901ca924bf78140b94c8ea4f6e5"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nafe1025138cb4a419fc4fd640f7f9820">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="Necbfcd754d464698a6c50c6bf0c7e49a"/>
+    <rdf:rest rdf:nodeID="Nf63d674989614bfba363481c7a8caf0b"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasDelayDuration">
+    <rdfs:domain rdf:resource="http://example.org/ontology#RiskEvent"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#DelayEvent"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2c6beb5af5d641a2bf2729a0d0bc0af6">
+    <rdf:first rdf:resource="http://example.org/ontology/score"/>
+    <rdf:rest rdf:nodeID="Nd214e6fa5010460289b6dd0b7ebd4e22"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Aura_Steel_Co">
+    <supplies rdf:resource="http://example.org/ontology#Microcontroller_Chip"/>
+    <rdf:type rdf:resource="http://example.org/ontology#BusinessActor"/>
+    <rdf:type rdf:resource="http://example.org/ontology#Supplier"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <hasReliabilityTier>Low</hasReliabilityTier>
+    <hasSLA rdf:resource="http://example.org/ontology#Contract_AuraSteel_Standard"/>
+    <leadTimeDays rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</leadTimeDays>
+    <penaltyClause>SLA Penalty: $500 per day delayed</penaltyClause>
+    <hasReliabilityScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.2</hasReliabilityScore>
+    <penaltyRatePerDay rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">500</penaltyRatePerDay>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N072a50c65dfb4bbf924c40b34b3e164e">
+    <rdf:rest rdf:nodeID="Nc7f88762d6dd42b58cbf3c7bf53dedd6"/>
+    <rdf:first rdf:nodeID="N1f384b53b8bc4623a23ef7f4993b6c19"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na53194e4f5cf4382a32bdc598f60945d">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="Ncc14d65b5830481a9d2f1763fd65e34c"/>
+    <rdf:first rdf:nodeID="Nae29ccb34aa14cdaa1dcaf0c537daeb9"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N505fe0de117143f7b9083b1e911c144d">
+    <swrl:body rdf:nodeID="Naf67af7eb41b4205b121462dc2a3496d"/>
+    <rdfs:comment>delay hits critical path process with low stock</rdfs:comment>
+    <swrl:head rdf:nodeID="Ndc9aa35036e5478f934c54104d0f2592"/>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+    <rdfs:label>ProductionDisruptionCriticalImpact</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology/predTime">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncf3f0966eee74c57b346c07464a9a933">
+    <rdf:rest rdf:nodeID="N52209f6f107349678cb61df9a39fe0b2"/>
+    <rdf:first rdf:nodeID="Nd7172a8eeeb44525a6f2e309c4967741"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N89d2b861ff4446bd9538bf77101c1ad9">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:argument2>Transport/Weather</swrl:argument2>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasReasonCode"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasCurrency">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Apex_Motor_Backup">
+    <leadTimeDays rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</leadTimeDays>
+    <hasReliabilityScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.91</hasReliabilityScore>
+    <country>JP</country>
+    <supplies rdf:resource="http://example.org/ontology#Electric_Motor_Rotor"/>
+    <rdf:type rdf:resource="http://example.org/ontology#AlternativeSupplier"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>Apex Motor Backup</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2a91203e5057447fbce99e25e30ee2cd">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/d"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/delayEvent"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#isTriggeredBy"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9e53372d9c394fbeb3fb875598d65504">
+    <rdf:first>Critical</rdf:first>
+    <rdf:rest rdf:nodeID="N03c887bd65664206a5cc52e7e6311e3e"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N29f192167e524d29a8130681b1457c4c">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <owl:oneOf rdf:nodeID="Nfbfbf227f1cf45ca9ad5caba58b2e002"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfbfbf227f1cf45ca9ad5caba58b2e002">
+    <rdf:first>CarrierIssue</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdf:rest rdf:nodeID="N0093514769264b5ba0c36dff97f63622"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#leadTimeDays">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Electronics_SubAssembly_Line">
+    <hasCriticalityLevel>High</hasCriticalityLevel>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/ontology#RiskEvent"/>
+    <rdf:type rdf:resource="http://example.org/ontology#Event"/>
+    <rdf:type rdf:resource="http://example.org/ontology#ProductionProcess"/>
+    <rdf:type rdf:resource="http://example.org/ontology#ProductionDisruption"/>
+    <hasRiskStatus>Confirmed</hasRiskStatus>
+    <hasDowntimeDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</hasDowntimeDuration>
+    <isCriticalPath rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isCriticalPath>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasReasonCode">
+    <rdfs:domain rdf:resource="http://example.org/ontology#RiskEvent"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#Event"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#DelayEvent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:nodeID="N29f192167e524d29a8130681b1457c4c"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N342fc9b32af24ef4b5a7ad8399773aa1">
+    <swrl:argument2 rdf:resource="http://example.org/ontology/delivered"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasDeliveredQuantity"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbb604d0dc1754572afa94cd89c314d22">
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasDowntimeDuration"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/time"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/p"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N32d8296632b7452e89dc364d6f1abf41">
+    <swrl:arguments rdf:nodeID="N0129d3456aef475fa7a7094555380972"/>
+    <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na0bdee97789a498d994fdec7c77e6dd3">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/m"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/p"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#affectsProcess"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#maverickSpend">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Contract_AuraSteel_Standard">
+    <penaltyClause>SLA Missed Item Penalty: $50 per unit missed</penaltyClause>
+    <hasUnitCost rdf:datatype="http://www.w3.org/2001/XMLSchema#float">15.0</hasUnitCost>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/ontology#SLAContract"/>
+    <governsMaterial rdf:resource="http://example.org/ontology#Microcontroller_Chip"/>
+    <hasMissedItemPenaltyRate rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">50</hasMissedItemPenaltyRate>
+    <leadTimeDays rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</leadTimeDays>
+    <hasSLALeadTime rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">168</hasSLALeadTime>
+    <hasOrderedQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</hasOrderedQuantity>
+    <hasSupplier rdf:resource="http://example.org/ontology#Aura_Steel_Co"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasMissedItemPenaltyRate">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#SLA_Agreement"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N86c561b48f394dd8acdeba4a3cb38502">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="Naae380bd9ef74f0f9cff2b108f3535f7"/>
+    <rdf:first rdf:nodeID="N23dea1c249ae427f84d2874856a7fece"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N22991322efad4bcebfece13de01a3ae2">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+    <swrl:classPredicate rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf5f275350cff4a9fbac6baa9f88391a9">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/po"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasOrderedQuantity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/ordered"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na2a17947316947709adf3177fe52675b">
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasRiskStatus"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <swrl:argument2>Confirmed</swrl:argument2>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N41201d6af59b4f848dde23dc4cc9870b">
+    <rdf:first rdf:resource="http://example.org/ontology/missed"/>
+    <rdf:rest rdf:nodeID="N4ef3f2f5e4414202bcfd0723e31e0edd"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#incursPenalty">
+    <rdfs:domain rdf:resource="http://example.org/ontology#RiskEvent"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#SLAViolation"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://example.org/ontology#Supplier"/>
+    <rdfs:range rdf:resource="http://example.org/ontology#BusinessActor"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Steel_Supply_Backup">
+    <rdfs:label>Steel Supply Backup</rdfs:label>
+    <country>US</country>
+    <rdf:type rdf:resource="http://example.org/ontology#AlternativeSupplier"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <supplies rdf:resource="http://example.org/ontology#Structural_Steel_Sheet"/>
+    <leadTimeDays rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</leadTimeDays>
+    <hasReliabilityScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.85</hasReliabilityScore>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nee4e8657f9774253b5f01a1788e2e770">
+    <rdf:rest rdf:nodeID="N12ced01279e741829fbe7aed7d052f9d"/>
+    <rdf:first rdf:nodeID="N32d8296632b7452e89dc364d6f1abf41"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#impacts">
+    <rdfs:domain rdf:resource="http://example.org/ontology#Event"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#ProductionDisruption"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#RiskEvent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://example.org/ontology#ProductionProcess"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb07330b39e7344738e43b4819d36ed01">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://example.org/ontology/safe"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndb47e7435a6d413895043d0bcdc7b770">
+    <swrl:classPredicate rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology/stock">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1108ef992906461c8e68c41eac5213b2">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasActualDepartureTime"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/actual"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N99e3d1c5b7114bcca8fc03b010d6ca44">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="Ndc6252db7bac416ca90cbc34b95092b3"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf0e5fd859f40415484130b7fcc02575c">
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasActualDepartureTime"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/actDep"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4d1871fcd0154bd7b6b846b722263e10">
+    <swrl:body rdf:nodeID="Ncfbd7c1e63c04c37b3c27fef2aaf0a21"/>
+    <rdfs:comment></rdfs:comment>
+    <rdfs:label>SLADelayConfirmedCarrier</rdfs:label>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+    <swrl:head rdf:nodeID="N9e95e64f0748474f806f1426bd3e4b9d"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N519fcc99a9544de0802ca2917ce8c98d">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="Nf852e8aa31b04752ac5008a0552fc188"/>
+    <rdf:rest rdf:nodeID="N09507e59737f4335a9418f7baa29185b"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#department">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7c1c861f09d24789b37450c36d55d037">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="N7f7ef56968904871a7dd1a9b9d9ea4ff"/>
+    <rdf:first rdf:nodeID="N919e69719d4d4b9d958b6ac5fdc10283"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne75817e3cf2b4cbd93794b2304da401f">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="Na602f892cc7a4ce1b41a66ea451f209f"/>
+    <rdf:rest rdf:nodeID="N837cf092e7cc44b28e68db6f37c2b703"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N94cc29e2aa5c4e6987a19625a467e084">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdf:rest rdf:nodeID="Nb6fd41ecb46c46fbad4755a203780def"/>
+    <rdf:first>High</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasOrderedQuantity">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#PurchaseOrder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb83125d11a3a4831af7c6e94cef6a50e">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="Nf35eaaaa95d249f7a331faac5d2e0886"/>
+    <rdf:rest rdf:nodeID="N482a48e3fbed43879dc27f648a8d9881"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nefe37519f6f448af9f8cd35b9ac2c3ff">
+    <swrl:arguments rdf:nodeID="N8627a997af154a89afeb6256fe34cb6b"/>
+    <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N23dea1c249ae427f84d2874856a7fece">
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#governs"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/sup"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/sla"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#DeliveryEvent">
+    <rdfs:subClassOf rdf:resource="http://example.org/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N593ac09dc81e48a498dd2a59e4a7422c">
+    <swrl:body rdf:nodeID="Nac2498311b8c4218a07ecaf16012f94d"/>
+    <rdfs:label>Replaces</rdfs:label>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+    <swrl:head rdf:nodeID="N13a77d0b4848400cb341639af2f730e6"/>
+    <rdfs:comment></rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc5d60e2526f544a89ff109937f8fb632">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://example.org/ontology/ordered"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasSLALeadTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#SLA_Agreement"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb7c57b1e3d734c77beed4a7cd0c5b7c3">
+    <rdf:first>Delivered</rdf:first>
+    <rdf:rest rdf:nodeID="N892e0f8022d6406183c572eb583eeb91"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N29d23fa53f4d4ac0bdd8ebb780b37627">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/m"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#transports"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#SLA-002">
+    <hasOrderedQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">500</hasOrderedQuantity>
+    <hasUnitCost rdf:datatype="http://www.w3.org/2001/XMLSchema#float">85.0</hasUnitCost>
+    <hasSLALeadTime rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">240</hasSLALeadTime>
+    <leadTimeDays rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</leadTimeDays>
+    <governsMaterial rdf:resource="http://example.org/ontology#Electric_Motor_Rotor"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/ontology#SLAContract"/>
+    <hasQualityPenaltyRate rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.15</hasQualityPenaltyRate>
+    <hasSupplier rdf:resource="http://example.org/ontology#Apex_Electronics"/>
+    <hasDelayPenaltyRate rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">400</hasDelayPenaltyRate>
+    <hasMinimumQualityThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.98</hasMinimumQualityThreshold>
+    <penaltyClause>SLA Quality Penalty: 15% of PO Cost for damaged goods</penaltyClause>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasName">
+    <rdfs:domain rdf:resource="http://example.org/ontology#BusinessActor"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1087bae41ee343c6a7222897561f72e7">
+    <rdf:first rdf:nodeID="N348ad37f1e7943bfbda8b7849a18909d"/>
+    <rdf:rest rdf:nodeID="Nfab4be2ba3a24ec88b6c84872bfd0d28"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasSafetyStockLevel">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#RawMaterial"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N57f37c7199b346d5abf8bd871125e561">
+    <rdf:rest rdf:nodeID="N5234a1271c2149a8bf28ab0efbe83612"/>
+    <rdf:first rdf:nodeID="N659cd0361a5f400b8de06ae369826031"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology/actArr">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc62650ac8b70484ab96d227f8de35328">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasActualDepartureTime"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/actual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd7172a8eeeb44525a6f2e309c4967741">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+    <swrl:classPredicate rdf:resource="http://example.org/ontology#SLAViolation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Apex_Electronics">
+    <hasSLA rdf:resource="http://example.org/ontology#Contract_Apex_Steel_Standard"/>
+    <hasSLA rdf:resource="http://example.org/ontology#SLA-002"/>
+    <rdf:type rdf:resource="http://example.org/ontology#Supplier"/>
+    <rdf:type rdf:resource="http://example.org/ontology#BusinessActor"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <supplies rdf:resource="http://example.org/ontology#Electric_Motor_Rotor"/>
+    <supplies rdf:resource="http://example.org/ontology#Structural_Steel_Sheet"/>
+    <leadTimeDays rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</leadTimeDays>
+    <penaltyRatePerDay rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</penaltyRatePerDay>
+    <hasReliabilityScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6</hasReliabilityScore>
+    <penaltyClause>SLA Penalty: $400 per day after 2-day grace period</penaltyClause>
+    <hasReliabilityTier>Medium</hasReliabilityTier>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasProbability">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#RiskEvent"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#Event"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndb98f78c309648c991f7caf2fdbdab9f">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/inc"/>
+    <swrl:classPredicate rdf:resource="http://example.org/ontology#IncumbentSupplier"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Truck_VoltSupply_Main">
+    <rdf:type rdf:resource="http://example.org/ontology#RiskEvent"/>
+    <rdf:type rdf:resource="http://example.org/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+    <transports rdf:resource="http://example.org/ontology#Structural_Steel_Sheet"/>
+    <hasDeliveryStatus>Delayed</hasDeliveryStatus>
+    <isTriggeredBy rdf:resource="http://example.org/ontology#Storm_Disruption_Log"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N76ec890f5c0a42c48a0b00fe51546f87">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+    <swrl:classPredicate rdf:resource="http://example.org/ontology#RawMaterial"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/m"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N33f969185bd345feb00fed75a83f0b00">
+    <rdf:first rdf:resource="http://example.org/ontology/days"/>
+    <rdf:rest rdf:nodeID="Nd463657e7ede48da8bf26d8770823f96"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na1899ff0e7e54a829a00a1990e6a6f3e">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+    <swrl:classPredicate rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#PO_AuraSteel_001">
+    <hasOrderedQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</hasOrderedQuantity>
+    <rdf:type rdf:resource="http://example.org/ontology#PurchaseOrder"/>
+    <issuedTo rdf:resource="http://example.org/ontology#Aura_Steel_Co"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology_version2">
+    <owl:imports rdf:resource="http://example.org/ontology"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#IncumbentSupplier">
+    <rdfs:subClassOf rdf:resource="http://example.org/ontology#Supplier"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/ontology#BusinessActor"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd4b02347764649b19922eea808369355">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <swrl:argument2>Predicted</swrl:argument2>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasRiskStatus"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N049296dc8b204c46920b06ae2b7d3095">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/delayEvent"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#isTriggeredBy"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/d"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N850ce98fd1de4b1b8fe695ab2a50d1f2">
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#isTriggeredBy"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/delayEvent"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/d"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Delivery_Apex_Damaged">
+    <rdf:type rdf:resource="http://example.org/ontology#SLAViolation"/>
+    <rdf:type rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <isPerformedBy rdf:resource="http://example.org/ontology#Apex_Electronics"/>
+    <hasViolationType>DamagedGoods</hasViolationType>
+    <fulfills rdf:resource="http://example.org/ontology#PO_Apex_001"/>
+    <hasTotalOrderCost rdf:datatype="http://www.w3.org/2001/XMLSchema#float">42500.0</hasTotalOrderCost>
+    <transports rdf:resource="http://example.org/ontology#Electric_Motor_Rotor"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8814f90822fd4d1f8a3fdc63c9059f10">
+    <swrl:arguments rdf:nodeID="N7411efc9398446d29f7093a6c2056d48"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+    <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#multiply"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology/safe">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Contract_VoltSupply_Standard">
+    <hasUnitCost rdf:datatype="http://www.w3.org/2001/XMLSchema#float">150.0</hasUnitCost>
+    <hasSupplier rdf:resource="http://example.org/ontology#VoltSupply_Global"/>
+    <hasSLALeadTime rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">336</hasSLALeadTime>
+    <penaltyClause>SLA Delay Penalty: $300 per day delayed</penaltyClause>
+    <hasOrderedQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1000</hasOrderedQuantity>
+    <hasDelayPenaltyRate rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">300</hasDelayPenaltyRate>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/ontology#SLAContract"/>
+    <leadTimeDays rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</leadTimeDays>
+    <governsMaterial rdf:resource="http://example.org/ontology#Lithium_Ion_Battery_Pack"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasPlannedDepartureTime">
+    <rdfs:domain rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#Event"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4dbce5e7a1e545bea7519bd2e5eeced9">
+    <rdf:rest rdf:nodeID="N8b5aec76d54a4d28886c02410eed36ff"/>
+    <rdf:first rdf:resource="http://example.org/ontology/actDep"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfa93094496e74d61acf96a530fb131b3">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="N36ec91f4082b4391a3b08c1118c50ebd"/>
+    <rdf:rest rdf:nodeID="N767d76b794d64374bddb80078b639082"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb1652125a9ff4879bfe8851599851505">
+    <rdf:rest rdf:nodeID="N2272b2713dba44e9ae6ccd31be3726f2"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="Nfcbfb427761e48bc8d95cf031dce8191"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0129d3456aef475fa7a7094555380972">
+    <rdf:first rdf:resource="http://example.org/ontology/stock"/>
+    <rdf:rest rdf:nodeID="N94826ed959fc46418350a46a2b319f1b"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb849f2af7b814ef6922e7b5c6a550bb3">
+    <swrl:arguments rdf:nodeID="N6158b998287b4a0d8eb412cbf4482557"/>
+    <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N99d17928b8ca48a88fa81bb197d5a1a0">
+    <rdf:first rdf:nodeID="N29c7b9bf0f0f44fdacf887e0b8ea9b30"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="N2453c535457940caa4ae13000ccfd3d0"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9425227194f84e16a2b8743b7d7c16c9">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <owl:oneOf rdf:nodeID="Nfcdbe25822434c0a9ac20af6e6f132cc"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nae2eeba4351b4174aa12082ea143b544">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/alt"/>
+    <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl:argument2>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#isRecommended"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6e02270a44c34af18b0a199fb49eb708">
+    <swrl:classPredicate rdf:resource="http://example.org/ontology#Supplier"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/s"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#BusinessActor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N919e69719d4d4b9d958b6ac5fdc10283">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/s"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+    <swrl:classPredicate rdf:resource="http://example.org/ontology#Supplier"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8841c2e566c543ca9abeb2b31b8a5fad">
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#governs"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/sla"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/sup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N36042ed25aa5495d8530bfd7783138a1">
+    <rdf:first rdf:nodeID="N2ad76633fad946a1bb1593ec29c9d81b"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="N1087bae41ee343c6a7222897561f72e7"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Lithium_Ion_Battery_Pack">
+    <isSuppliedBy rdf:resource="http://example.org/ontology#EcoLithium_Alternate"/>
+    <isSuppliedBy rdf:resource="http://example.org/ontology#VoltSupply_Global"/>
+    <hasSafetyStockLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">800</hasSafetyStockLevel>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/ontology#RawMaterial"/>
+    <hasInventoryStock rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</hasInventoryStock>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4348b52e5a174d6e9dabf67e9c6e315e">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="N2bedea3c20c74a8aaac7efdf20b5a365"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd184fab164c04c739fb9293bee15b64a">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:argument2>Medium</swrl:argument2>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasReliabilityTier"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/s"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf59be80107ab49d09ae936ac07cd8d50">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/delayEvent"/>
+    <swrl:argument2>Carrier_Issue</swrl:argument2>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasReasonCode"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasViolationType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#RiskEvent"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#SLAViolation"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#Event"/>
+    <rdfs:range rdf:nodeID="N471c9b0e1a444b939d3a6b8851fccec3"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N41dc71a2ac78425fb76c79a296d2c4f6">
+    <rdf:first rdf:nodeID="Nae2eeba4351b4174aa12082ea143b544"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#isPerformedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#Event"/>
+    <rdfs:range rdf:resource="http://example.org/ontology#BusinessActor"/>
+    <owl:inverseOf rdf:resource="http://example.org/ontology#performsDeliveryEvent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#followsRoute">
+    <rdfs:domain rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://example.org/ontology#Route"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N85319dcba518430980c8b7294bb6978c">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.5</rdf:first>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasDiscoveryTimestamp">
+    <rdfs:domain rdf:resource="http://example.org/ontology#RiskEvent"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N82d1554b02a64a86a6bd15337063b6cf">
+    <rdf:first rdf:nodeID="Nd184fab164c04c739fb9293bee15b64a"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb870844ffeeb498184ab3be3845be248">
+    <swrl:classPredicate rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N77df28e4245f4723a0b1bd7fc0e48b6a">
+    <rdf:first rdf:nodeID="N3bb4cc43f2c243549dfa5819c3c7de5f"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="Nf45011298ec2479aa908ce6fa3202221"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4cd92c6141814aab8524990dd2c74c2c">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>Medium</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7ef4b008961549f7b1c4baf4b69b5f0b">
+    <swrl:head rdf:nodeID="N42ece1596ed24526a6dc6f16109b857c"/>
+    <swrl:body rdf:nodeID="N99d17928b8ca48a88fa81bb197d5a1a0"/>
+    <rdfs:comment>Downtime = delivery delay</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+    <rdfs:label>DowntimeCalculation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4ee2cf1cf5b047c7947b3643b89b699e">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="Nf5f275350cff4a9fbac6baa9f88391a9"/>
+    <rdf:rest rdf:nodeID="Ne5d1e786b0b34aff94d79c621b7d1ffe"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N37b443b8544444beb6f1043a671c8d5f">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.8</rdf:first>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N61c2a632ad9f48969eb9b717e9bb77e7">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+    <swrl:classPredicate rdf:resource="http://example.org/ontology#SLAViolation"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N461f8c4fdbb448b3b162267e2f8a7318">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+    <rdfs:comment></rdfs:comment>
+    <swrl:head rdf:nodeID="Nfd3d8efd7bdb45c5a5301db8d3869122"/>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+    <rdfs:label>SLADelayPredictionCarrier</rdfs:label>
+    <swrl:body rdf:nodeID="N0995f4d159e5444d898628458a228e76"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#country">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0f5909df88e04fcea01daa2d493dacb1">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/sla"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/sup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#governs"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb86c7ee8322f411ab3ed2eea2dc2953b">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasPredictedLeadTime"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/predTime"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N767d76b794d64374bddb80078b639082">
+    <rdf:first rdf:nodeID="N571ff50295214a33821231029bac2b7d"/>
+    <rdf:rest rdf:nodeID="N519fcc99a9544de0802ca2917ce8c98d"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd214e6fa5010460289b6dd0b7ebd4e22">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.5</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#DelayEvent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/ontology#RiskEvent"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/ontology#Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncc14d65b5830481a9d2f1763fd65e34c">
+    <rdf:first rdf:nodeID="Nf4e4a23539d44a34bc69b75e5661958d"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfa73456bdefc45f4a70299d7399eebc6">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/m"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasInventoryStock"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/stock"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1d855da5d2bf4ddbbffb2afd28c854c9">
+    <swrl:arguments rdf:nodeID="N427f41856e2c4f3d897bbb887444988c"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+    <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology/d">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4f4995c446f442158aec493a6262b158">
+    <rdf:first rdf:nodeID="N105f11e9b370444cbcb090bb7286d2ec"/>
+    <rdf:rest rdf:nodeID="Nc5b83de8dc4a44669dbbbad6fe3dc51c"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Delivery_AuraSteel_Shortage">
+    <rdf:type rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+    <rdf:type rdf:resource="http://example.org/ontology#SLAViolation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <transports rdf:resource="http://example.org/ontology#Microcontroller_Chip"/>
+    <fulfills rdf:resource="http://example.org/ontology#PO_AuraSteel_001"/>
+    <isPerformedBy rdf:resource="http://example.org/ontology#Aura_Steel_Co"/>
+    <hasViolationType>UnderShipment</hasViolationType>
+    <hasOrderedQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</hasOrderedQuantity>
+    <hasDeliveredQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1800</hasDeliveredQuantity>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#contractType">
+    <rdfs:domain rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasOrderDate">
+    <rdfs:domain rdf:resource="http://example.org/ontology#PurchaseOrder"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7116e703210046cfa96e3d49c771330f">
+    <swrl:body rdf:nodeID="Ndcddd1efd8db40a584d4556822431ef9"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+    <swrl:head rdf:nodeID="N8b1e06c10d3a456faa1d6d1c51d78284"/>
+    <rdfs:comment></rdfs:comment>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+    <rdfs:label>QualityViolations</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8920d76764024517b3d0ca1cbac3bfac">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="N33306f3a5e8f418fbfb4893de969e00a"/>
+    <rdf:rest rdf:nodeID="Ne2a068b399e94a9fa938caa4a1ea77bc"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N185f47e3430f4dfeb2b68ca49b9ab33d">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <swrl:classPredicate rdf:resource="http://example.org/ontology#SLAViolation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne7a43108dae040dab89fc962fb3cdefa">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdf:first rdf:resource="http://example.org/ontology/score"/>
+    <rdf:rest rdf:nodeID="N37b443b8544444beb6f1043a671c8d5f"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nae29ccb34aa14cdaa1dcaf0c537daeb9">
+    <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThanOrEqual"/>
+    <swrl:arguments rdf:nodeID="N85fc3fdca32746a09a60e2f58f8461ab"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9455a9b06c6a4444ad578a9af3783290">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/sla"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasMinQualityThreshold"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/min"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3e6990cb601d4a0fb9bf53c4a22b22be">
+    <swrl:argument2 rdf:resource="http://example.org/ontology/sup"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#issuedTo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/po"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasInventoryStock">
+    <rdfs:domain rdf:resource="http://example.org/ontology#RawMaterial"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne79fcce78a8541b49b7c5835b5eea6f0">
+    <rdf:first rdf:nodeID="Ne192c14bd59c42c19d77d5ad1325a9f6"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8e4886422712445fb830fb2e2edcb87b">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:argument2>Delayed</swrl:argument2>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasDeliveryStatus"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndc6252db7bac416ca90cbc34b95092b3">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/penalty"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasPenaltyAmount"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nca589555196d46d087776746984851f9">
+    <rdf:first rdf:resource="http://example.org/ontology/actArr"/>
+    <rdf:rest rdf:nodeID="N0abcfd2cb42942679a1786959af3d69d"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#VoltSupply_Global">
+    <penaltyClause>SLA Penalty: $300 per day delayed</penaltyClause>
+    <hasSLA rdf:resource="http://example.org/ontology#Contract_VoltSupply_Standard"/>
+    <penaltyRatePerDay rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</penaltyRatePerDay>
+    <hasReliabilityTier>High</hasReliabilityTier>
+    <hasReliabilityScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.85</hasReliabilityScore>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/ontology#Supplier"/>
+    <rdf:type rdf:resource="http://example.org/ontology#BusinessActor"/>
+    <rdf:type rdf:resource="http://example.org/ontology#IncumbentSupplier"/>
+    <leadTimeDays rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</leadTimeDays>
+    <supplies rdf:resource="http://example.org/ontology#Lithium_Ion_Battery_Pack"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc0a7df252cd041c28bfcb1dfcd341539">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/alt"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/inc"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#replaces"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncd42f37d472140fcb74b8814789fb962">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/alt"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasReliabilityTier"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:argument2>High</swrl:argument2>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncedcc57d86db4a3a86658f7bb877d2f3">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="N8920d76764024517b3d0ca1cbac3bfac"/>
+    <rdf:first rdf:nodeID="N78416140589e496183317a8af54f2481"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf852e8aa31b04752ac5008a0552fc188">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/actArr"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasActualArrivalDate"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nabd4d7850ac940ed90d9bb435df82e75">
+    <swrl:body rdf:nodeID="N873e6f333f3b4b9d8379f12f8f21b287"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+    <swrl:head rdf:nodeID="Ne366101f4ad44d2c8cf0e063becbe201"/>
+    <rdfs:label>PenaltyQuality</rdfs:label>
+    <rdfs:comment></rdfs:comment>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb7deb1b3c86543a6a881862108ca2c0d">
+    <rdf:rest rdf:nodeID="N7756e44e9d5d49febf81b5afd1c36603"/>
+    <rdf:first rdf:nodeID="N83170d557aa141f3b16aea37a21c5235"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9e95e64f0748474f806f1426bd3e4b9d">
+    <rdf:first rdf:nodeID="N61c2a632ad9f48969eb9b717e9bb77e7"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="N273f4c839ba24e438eb751eb135048c5"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasWeight">
+    <rdfs:domain rdf:resource="http://example.org/ontology#RawMaterial"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2bedea3c20c74a8aaac7efdf20b5a365">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/s"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasReliabilityTier"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:argument2>Low</swrl:argument2>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8c2c8c6d5819462a858a76a4f54ade41">
+    <rdf:rest rdf:nodeID="N1f1d1f5b933e42429a1549690a3a8270"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="N2d8c856e3e364b148f799cf49aea6d9f"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#supplies">
+    <rdfs:domain rdf:resource="http://example.org/ontology#Supplier"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#BusinessActor"/>
+    <rdfs:range rdf:resource="http://example.org/ontology#RawMaterial"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc3fc70d92aee4ff18090d6511c50f5a4">
+    <rdfs:label>ProductionDisruptionStandardImpact</rdfs:label>
+    <swrl:head rdf:nodeID="N336ccfdda4b345c59c6489c9d582ba43"/>
+    <rdfs:comment>delay hits non critical process with low stock</rdfs:comment>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+    <swrl:body rdf:nodeID="N3ed0a846c3444887bc287467650ef58c"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8c489d29671e46928dcdd4f6af3e12ec">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/alt"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#supplies"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/m"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology/min">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N35fede52a5f943e7a2576a94f1e822b0">
+    <rdf:first rdf:nodeID="Nbcb98651fa1a4be399d9177aa1f85620"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="Nf2d98743f900448db312e538a08ddab5"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#lineNet">
+    <rdfs:domain rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nffd1a34aeb774a0a8f0b06f9a77110ca">
+    <rdfs:comment></rdfs:comment>
+    <swrl:head rdf:nodeID="Ne3a20bb1dcc04b8a9dfa1823171526f6"/>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+    <rdfs:label>SLADelayConfirmedCustoms</rdfs:label>
+    <swrl:body rdf:nodeID="N5aa5d4223cc049d7b01205ec81d9b593"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N960e46d267fd4cf88d0be452d167bf58">
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#isCriticalPath"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/p"/>
+    <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl:argument2>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Naa1fa6f4faf346c8ae9c54fde31d24fd">
+    <rdf:rest rdf:nodeID="N6f693ed75c314e23a0aa27488a6084c4"/>
+    <rdf:first rdf:nodeID="Nf3d50899faa143e59949c81762ffd357"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N36ec91f4082b4391a3b08c1118c50ebd">
+    <swrl:argument2 rdf:resource="http://example.org/ontology/planDep"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasPlannedDepartureTime"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5587374cc06e45059587e404628ca66a">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/p"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:argument2>Confirmed</swrl:argument2>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasRiskStatus"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N093a08a9c39a479f932c6a02b64c874a">
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasReliabilityScore"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/score"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/s"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#utilizesRoute">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#BusinessActor"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#Supplier"/>
+    <rdfs:range rdf:resource="http://example.org/ontology#Route"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasDelayPenaltyRate">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#SLA_Agreement"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3662fcd971364c19a0d572128f762366">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="Na30c04895bd9472c8128a9e98e36f8f6"/>
+    <rdf:first rdf:nodeID="Nb849f2af7b814ef6922e7b5c6a550bb3"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb4999d4cb08d49648ab8a32d1547f625">
+    <rdf:first>Shipped</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9fedb0dd7bab40f2bb0eb20b9bf5e10d">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/delayEvent"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasReasonCode"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:argument2>Carrier_Issue</swrl:argument2>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne3a20bb1dcc04b8a9dfa1823171526f6">
+    <rdf:rest rdf:nodeID="Nc6b6b593381c46db955e2c4624023634"/>
+    <rdf:first rdf:nodeID="N185f47e3430f4dfeb2b68ca49b9ab33d"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndaaa4a7b2ba44a0c835c54b4e509eb1b">
+    <rdf:rest rdf:nodeID="N72a6d0fabda446de9f5644f70395fc21"/>
+    <rdf:first rdf:nodeID="N850ce98fd1de4b1b8fe695ab2a50d1f2"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Electric_Motor_Rotor">
+    <rdf:type rdf:resource="http://example.org/ontology#RawMaterial"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <hasSafetyStockLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</hasSafetyStockLevel>
+    <affectsProcess rdf:resource="http://example.org/ontology#Electronics_SubAssembly_Line"/>
+    <hasInventoryStock rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</hasInventoryStock>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfbfaf768c9b54419b47c64f759cdb3dc">
+    <rdf:rest rdf:nodeID="Ndd57e800f069458295a353c24a96793c"/>
+    <rdf:first rdf:resource="http://example.org/ontology/predTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9a16627bf43449d499a9b954cc3abd1a">
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasDeliveredQuantity"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/delivered"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2f240299ddd248e181c459a61ba4f892">
+    <swrl:argument2 rdf:resource="http://example.org/ontology/penalty"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasPenaltyAmount"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3fff1f031b46432aab9a5c3e111ee8ac">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/s"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/score"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasReliabilityScore"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasReliabilityTier">
+    <rdfs:range rdf:nodeID="N311ddd5b8b97434d9adf09977cb41155"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#Supplier"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#BusinessActor"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf3d50899faa143e59949c81762ffd357">
+    <swrl:argument2>Critical</swrl:argument2>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/p"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasCriticalityLevel"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6158b998287b4a0d8eb412cbf4482557">
+    <rdf:first rdf:resource="http://example.org/ontology/stock"/>
+    <rdf:rest rdf:nodeID="Nb07330b39e7344738e43b4819d36ed01"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0093514769264b5ba0c36dff97f63622">
+    <rdf:rest rdf:nodeID="N800c9f36671442a2a0e5bbf03232e27e"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdf:first>CustomsDelay</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasCriticalityLevel">
+    <rdfs:domain rdf:resource="http://example.org/ontology#RiskEvent"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#Event"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#ProductionDisruption"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:nodeID="N8bd489fdc7464486a37cf75cfe744713"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N42ece1596ed24526a6dc6f16109b857c">
+    <rdf:first rdf:nodeID="Nbb604d0dc1754572afa94cd89c314d22"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Microcontroller_Chip">
+    <isSuppliedBy rdf:resource="http://example.org/ontology#Aura_Steel_Co"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/ontology#RawMaterial"/>
+    <hasSafetyStockLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</hasSafetyStockLevel>
+    <affectsProcess rdf:resource="http://example.org/ontology#EV_Battery_Assembly_Line"/>
+    <hasInventoryStock rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</hasInventoryStock>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3aaf6fd7122a49479decc3cee358bca8">
+    <rdf:first rdf:resource="http://example.org/ontology/min"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4f526256e15b4baa856a036a6e4d0d9a">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasPlannedDepartureTime"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/planned"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1d6bcb7580fb449984ca868e2c478ab5">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <swrl:argument2>LateDelivery</swrl:argument2>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasViolationType"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N855a01d688c9437f800edb906df28d40">
+    <swrl:argument2 rdf:resource="http://example.org/ontology/po"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#fulfills"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#issuedTo">
+    <rdfs:range rdf:resource="http://example.org/ontology#Supplier"/>
+    <rdfs:range rdf:resource="http://example.org/ontology#BusinessActor"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#PurchaseOrder"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#performsDeliveryEvent">
+    <rdfs:range rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+    <rdfs:range rdf:resource="http://example.org/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#BusinessActor"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasTotalOrderCost">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#PurchaseOrder"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#isTriggeredBy">
+    <rdfs:range rdf:resource="http://example.org/ontology#Event"/>
+    <rdfs:range rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#RiskEvent"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0f842640054c4695aa8328742efea8f8">
+    <rdf:first rdf:nodeID="Ned3b163fc5ce4774a32cc7842be4849d"/>
+    <rdf:rest rdf:nodeID="Nc8bc2770783e40b983a7bc89e2b1f445"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasReliabilityScore">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#Supplier"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#BusinessActor"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf1fdcc598c8b4e61a27a4c70b2c59fc1">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasViolationType"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <swrl:argument2>MissedItem</swrl:argument2>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3d93057fe3de42649e99ed7370ab319c">
+    <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#subtract"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+    <swrl:arguments rdf:nodeID="N41201d6af59b4f848dde23dc4cc9870b"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8bda66798c4d482d969c87246fadd138">
+    <rdf:first rdf:resource="http://example.org/ontology/stock"/>
+    <rdf:rest rdf:nodeID="N76dab7a7e3134b2ea72910129f168525"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne6eb87079d6d42aabe30deafe98332da">
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasInventoryStock"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/stock"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/m"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Supplier">
+    <rdfs:subClassOf rdf:resource="http://example.org/ontology#BusinessActor"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N72a6d0fabda446de9f5644f70395fc21">
+    <rdf:first rdf:nodeID="Nf59be80107ab49d09ae936ac07cd8d50"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2128ae6a3d064a48a85408e27beb53b2">
+    <swrl:argument2 rdf:resource="http://example.org/ontology/sup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#issuedTo"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/po"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6b8533b6a05d43669d92cc053aabf771">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="N2f240299ddd248e181c459a61ba4f892"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Necbfcd754d464698a6c50c6bf0c7e49a">
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasInventoryStock"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/stock"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/m"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2453c535457940caa4ae13000ccfd3d0">
+    <rdf:rest rdf:nodeID="N8d2731fd446d4a888fc1a2847748c6bf"/>
+    <rdf:first rdf:nodeID="N7054bd6b523740138f8ef83eb0d3150b"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc5754804ef3546cf854d7d83af0c075f">
+    <rdf:rest rdf:nodeID="Na80e340452b7485bba11aca23933b2db"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="N5c328f1306de4745a2a1eec180c0f939"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N709b0ae9315e4dcd93d0000362904a53">
+    <rdfs:label>PenaltyMissedItem</rdfs:label>
+    <swrl:body rdf:nodeID="Nd52c4b3f6df443bf9703a5a3ece4ee8a"/>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+    <swrl:head rdf:nodeID="N6b8533b6a05d43669d92cc053aabf771"/>
+    <rdfs:comment></rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Truck_Apex_Secondary">
+    <rdf:type rdf:resource="http://example.org/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+    <transports rdf:resource="http://example.org/ontology#Electric_Motor_Rotor"/>
+    <hasDeliveryStatus>Delayed</hasDeliveryStatus>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7de2c6456f2946d6b28c6db9f9872436">
+    <swrl:argument2 rdf:resource="http://example.org/ontology/days"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/delayEvent"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasDelayDuration"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#suppliesSameMaterialAs">
+    <rdfs:domain rdf:resource="http://example.org/ontology#Supplier"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#AlternativeSupplier"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#BusinessActor"/>
+    <rdfs:range rdf:resource="http://example.org/ontology#Supplier"/>
+    <rdfs:range rdf:resource="http://example.org/ontology#BusinessActor"/>
+    <rdfs:range rdf:resource="http://example.org/ontology#IncumbentSupplier"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N12ced01279e741829fbe7aed7d052f9d">
+    <rdf:first rdf:nodeID="N960e46d267fd4cf88d0be452d167bf58"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0995f4d159e5444d898628458a228e76">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="N6dfa732fffe041528ec10231b2b3638f"/>
+    <rdf:rest rdf:nodeID="Nfa5abe32398d43d39179e79a97ab1e26"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfab4be2ba3a24ec88b6c84872bfd0d28">
+    <rdf:first rdf:nodeID="N569ef7a5e3ae4e6f84bfbb41a410a0b1"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="Ndeef5d91ea86421ca5abfc358fd8ac98"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndf38897bff794630be804b2a532533cf">
+    <rdf:first rdf:nodeID="Nbfe4ff096bbc4f5e84823e6d63fd17b5"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="N996c22d3461b41f8afe0aa983c343243"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#SLA_Agreement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:disjointWith rdf:resource="http://example.org/ontology#Supplier"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne97788267ef248cd977b8b96c88ac9f2">
+    <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#multiply"/>
+    <swrl:arguments rdf:nodeID="N43943ca3aa684fdd897951eb054c8de7"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology/time">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N93e511de49fd40339a09a513783ab583">
+    <rdf:first rdf:nodeID="Nfa73456bdefc45f4a70299d7399eebc6"/>
+    <rdf:rest rdf:nodeID="N4f4995c446f442158aec493a6262b158"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1a58c65123c845be800aa0ba5213e82c">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="N22ce77b989b44e1da390a9cf27db7ec1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N93b8ed10dc3047598d9c8bbd53037646">
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasPlannedArrivalDate"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/planArr"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N348ad37f1e7943bfbda8b7849a18909d">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasViolationType"/>
+    <swrl:argument2>LateDelivery</swrl:argument2>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#governs">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://example.org/ontology#Supplier"/>
+    <rdfs:range rdf:resource="http://example.org/ontology#BusinessActor"/>
+    <owl:inverseOf rdf:resource="http://example.org/ontology#hasSLA"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#SLA_Agreement"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd547dd3f306344b885d32f84aa324fea">
+    <rdf:first rdf:nodeID="Ne6eb87079d6d42aabe30deafe98332da"/>
+    <rdf:rest rdf:nodeID="N0e12af70485e453b9c6474a0c5e7e0c0"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N13a77d0b4848400cb341639af2f730e6">
+    <rdf:first rdf:nodeID="Nc0a7df252cd041c28bfcb1dfcd341539"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N99a516ba7e0045ad98127c7bc02fa55b">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="N0234a0a5effa43489c601ad9492b9e8a"/>
+    <rdf:rest rdf:nodeID="N3bfbe1349b6747c8925a5cce11d274ed"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7054bd6b523740138f8ef83eb0d3150b">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:argument2>Delayed</swrl:argument2>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasDeliveryStatus"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8d2731fd446d4a888fc1a2847748c6bf">
+    <rdf:first rdf:nodeID="Ndadd0385ae8e495bb5bbb7f454a40549"/>
+    <rdf:rest rdf:nodeID="N31b09f84463a436e871c172b4a8391f3"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#taxPct">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfa83c6e563dd48ed94e9b8902523ed18">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/p"/>
+    <swrl:classPredicate rdf:resource="http://example.org/ontology#ProductionDisruption"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb6fd41ecb46c46fbad4755a203780def">
+    <rdf:first>Low</rdf:first>
+    <rdf:rest rdf:nodeID="Na066b5aed3744bd6bf0798d7d549507f"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1c0f0ed58d1c4c4c9b173ce1b1ca67ce">
+    <rdf:rest rdf:nodeID="N93e511de49fd40339a09a513783ab583"/>
+    <rdf:first rdf:nodeID="N107239131080494cb4b330581ff7f4f3"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N539955d306f54ecf910600b90b7aaaf3">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="Nbb79f70014f14e5c954eca7b8e89954c"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbf2d825bb3894d4a9c7d1dbfaacebdbe">
+    <swrl:head rdf:nodeID="Nd24e71fda4b14f30bfff7481d9837ccc"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+    <swrl:body rdf:nodeID="N548f443dcbbb4ddda24d1f07621005af"/>
+    <rdfs:comment></rdfs:comment>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+    <rdfs:label>InventoryRiskNoDelay</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5c328f1306de4745a2a1eec180c0f939">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <swrl:classPredicate rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na4a02dc7fe804b688eafbf15a49c839a">
+    <swrl:argument2>CustomsDelay</swrl:argument2>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasReasonCode"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/delayEvent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#managesRoute">
+    <rdfs:range rdf:resource="http://example.org/ontology#Route"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#BusinessActor"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N72377d40930f4fffaea94724731a0015">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/score"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasQualityScore"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8af25f1016a54107bdafd88bddc1a85a">
+    <swrl:arguments rdf:nodeID="Ne7a43108dae040dab89fc962fb3cdefa"/>
+    <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThanOrEqual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N852e4f49adcd4cd09ed632659f6c2a4a">
+    <rdf:rest rdf:nodeID="N1db16d2f560a455ab6159987e2c21593"/>
+    <rdf:first rdf:resource="http://example.org/ontology/stock"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N83170d557aa141f3b16aea37a21c5235">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/mat"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#isSuppliedBy"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/sup"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8c66458944074dba8c280d11e3723511">
+    <swrl:head rdf:nodeID="N4348b52e5a174d6e9dabf67e9c6e315e"/>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+    <rdfs:label>ReliabilityLow</rdfs:label>
+    <rdfs:comment>score &lt; 0.5</rdfs:comment>
+    <swrl:body rdf:nodeID="N7c1c861f09d24789b37450c36d55d037"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#EcoLithium_Alternate">
+    <rdf:type rdf:resource="http://example.org/ontology#Supplier"/>
+    <rdf:type rdf:resource="http://example.org/ontology#AlternativeSupplier"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/ontology#BusinessActor"/>
+    <replaces rdf:resource="http://example.org/ontology#VoltSupply_Global"/>
+    <supplies rdf:resource="http://example.org/ontology#Lithium_Ion_Battery_Pack"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N873e6f333f3b4b9d8379f12f8f21b287">
+    <rdf:rest rdf:nodeID="N604325fa09ad45d8bf08eae1aeae0682"/>
+    <rdf:first rdf:nodeID="N22991322efad4bcebfece13de01a3ae2"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5a2dca2f93424eb99d0f27dba82796b5">
+    <rdf:rest rdf:nodeID="N220be383aaf3489caa6f8deaf5bfd294"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="N3376410fcfdd4503896fcf0071e1983b"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7411efc9398446d29f7093a6c2056d48">
+    <rdf:rest rdf:nodeID="Nfd6325456f5d4fd7954652a61637cc83"/>
+    <rdf:first rdf:resource="http://example.org/ontology/penalty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Contract_Apex_Steel_Standard">
+    <governsMaterial rdf:resource="http://example.org/ontology#Structural_Steel_Sheet"/>
+    <penaltyClause>SLA Penalty: $400 per day after 2-day grace period</penaltyClause>
+    <hasSLALeadTime rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">240</hasSLALeadTime>
+    <leadTimeDays rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</leadTimeDays>
+    <hasSupplier rdf:resource="http://example.org/ontology#Apex_Electronics"/>
+    <hasDelayPenaltyRate rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">400</hasDelayPenaltyRate>
+    <hasOrderedQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">800</hasOrderedQuantity>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/ontology#SLAContract"/>
+    <hasUnitCost rdf:datatype="http://www.w3.org/2001/XMLSchema#float">45.0</hasUnitCost>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N837cf092e7cc44b28e68db6f37c2b703">
+    <rdf:rest rdf:nodeID="Nacf2593368f04b4e8a2620eaf18ea63c"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="N700ea3a90f12459693fbc5a0e2a45960"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N28aee973928244b69b7b48122c359376">
+    <rdf:rest rdf:nodeID="N6388ee9fa882409180e5778abb3fe7e9"/>
+    <rdf:first rdf:nodeID="Nabdf62baaad5476a9f315fe377f0e1a8"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N22ce77b989b44e1da390a9cf27db7ec1">
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasRiskStatus"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <swrl:argument2>Confirmed</swrl:argument2>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N44d082d153934eda8fb9054a29848f53">
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#governs"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/sla"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/sup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#discountPct">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N745df788c6b34404bbe126a30557fe21">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>Transport/Weather</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasPenaltyAmount">
+    <rdfs:domain rdf:resource="http://example.org/ontology#SLAViolation"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#Event"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#RiskEvent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology/actDep">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9ae57ee2638e48c4bf2a44094f8ccbd5">
+    <rdf:rest rdf:nodeID="N69b25d1095264ef19588329eb6a37e9f"/>
+    <rdf:first rdf:nodeID="N7de2c6456f2946d6b28c6db9f9872436"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#ProductionDisruption">
+    <rdfs:subClassOf rdf:resource="http://example.org/ontology#Event"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/ontology#RiskEvent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncd343bfeb9e54a4e9f5055d996b019ec">
+    <rdf:first rdf:resource="http://example.org/ontology/planned"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb2f44a38115e42f5bf68040ec983a8bf">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="N88736c02b35e4f0894e6337b27766521"/>
+    <rdf:first rdf:nodeID="N82484fb0fb5c404faf606a3afaf6d72d"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na85b999784284b3e8d78fcea92d4519a">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <swrl:classPredicate rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasEstimatedFinancialImpact">
+    <rdfs:domain rdf:resource="http://example.org/ontology#Event"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#RiskEvent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc8d3762670cd4dd68cf9ca1c6c2ee63f">
+    <rdf:first rdf:nodeID="N6a302797cf7b41439e737a1ddb81409d"/>
+    <rdf:rest rdf:nodeID="N80656f69303745459cd045209ffa7a9e"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc38b052671d8449d85c793fcbb367e6e">
+    <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+    <swrl:arguments rdf:nodeID="Nf77d544a12914c8aaf8d5090aa056fc2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndd57e800f069458295a353c24a96793c">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://example.org/ontology/agreedTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8bd489fdc7464486a37cf75cfe744713">
+    <owl:oneOf rdf:nodeID="N9e53372d9c394fbeb3fb875598d65504"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasStandardUnit">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#RawMaterial"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0da7c96b9cbe4f059f36f85d9581072e">
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#transports"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/m"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#PO_Apex_001">
+    <hasOrderedQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">500</hasOrderedQuantity>
+    <issuedTo rdf:resource="http://example.org/ontology#Apex_Electronics"/>
+    <hasTotalOrderCost rdf:datatype="http://www.w3.org/2001/XMLSchema#float">42500.0</hasTotalOrderCost>
+    <rdf:type rdf:resource="http://example.org/ontology#PurchaseOrder"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6f1ea0273bca40a193d1839d20b7ba3b">
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasDisruptionStatus"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/p"/>
+    <swrl:argument2>Risk of Stoppage</swrl:argument2>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Aura_Steel_Backup">
+    <supplies rdf:resource="http://example.org/ontology#Microcontroller_Chip"/>
+    <country>DE</country>
+    <rdf:type rdf:resource="http://example.org/ontology#AlternativeSupplier"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <hasReliabilityScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.88</hasReliabilityScore>
+    <rdfs:label>Aura Steel Backup</rdfs:label>
+    <leadTimeDays rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</leadTimeDays>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8d8ccab175d944a18f4d4c4ca6b1fc21">
+    <rdf:first rdf:nodeID="Nfe022657ed7e4d60af2fe1d1baacb2af"/>
+    <rdf:rest rdf:nodeID="N87e754687cef4906bf1bcad2a0648c8b"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndc9aa35036e5478f934c54104d0f2592">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="Nfa83c6e563dd48ed94e9b8902523ed18"/>
+    <rdf:rest rdf:nodeID="Naa1fa6f4faf346c8ae9c54fde31d24fd"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasQualityPenaltyRate">
+    <rdfs:domain rdf:resource="http://example.org/ontology#SLA_Agreement"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndfd441a48a9547bab4f0a4785e85a138">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/alt"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/inc"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#replaces"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasDisruptionStatus">
+    <rdfs:domain rdf:resource="http://example.org/ontology#ProductionProcess"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N07b88c2f64c340ad90f32580069ef003">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasReliabilityScore"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/score"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/s"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#penaltyClause">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7d5dae44f77b4b0094aa868981cf1319">
+    <swrl:classPredicate rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N326923fd0cde402dbf29aad4407306bd">
+    <rdf:rest rdf:nodeID="N8ebc8fccbc6a406499a91badb0bb57de"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="N2128ae6a3d064a48a85408e27beb53b2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasUnitCost">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasMaterialID">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#RawMaterial"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasActualArrivalDate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#Event"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na2a6e71b49814092821ba3ed255749ba">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="N5e42b8388afd4b7798c350ef6f5bf094"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N55c0a7e142644ee4b5e796b760651a83">
+    <rdf:first rdf:nodeID="N2a91203e5057447fbce99e25e30ee2cd"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="N9ae57ee2638e48c4bf2a44094f8ccbd5"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N618864f8c52f4ddea8307b5ab60135c0">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <swrl:classPredicate rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na4a9252c7d234946869330dd9a0df1e9">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <owl:oneOf rdf:nodeID="N5ef880f2cd964af9984ec4ab24a4b403"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na51c50030ecd4791a1cdd3c0a54d9bac">
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasPenaltyAmount"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/penalty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6a302797cf7b41439e737a1ddb81409d">
+    <swrl:argument2>LateDelivery</swrl:argument2>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasViolationType"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1acd5815e3534aefbe061f4a991737f3">
+    <rdf:rest rdf:nodeID="N36042ed25aa5495d8530bfd7783138a1"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="Nb505ab198804429bb24ef553dfc666a8"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbcb98651fa1a4be399d9177aa1f85620">
+    <swrl:classPredicate rdf:resource="http://example.org/ontology#Supplier"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/s"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8a825534d5bc49e195e6067edcce8dfe">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/m"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/p"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#affectsProcess"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf2d98743f900448db312e538a08ddab5">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="N07b88c2f64c340ad90f32580069ef003"/>
+    <rdf:rest rdf:nodeID="Na53194e4f5cf4382a32bdc598f60945d"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty">
+    <rdfs:comment></rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf4e4a23539d44a34bc69b75e5661958d">
+    <swrl:arguments rdf:nodeID="N029f1c39b25f4a8ca6a3e4b937bfc596"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+    <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3595c34d12664e1982184dce35fc61eb">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="N8369dd82da594b499b4cc6c313b6cccc"/>
+    <rdf:rest rdf:nodeID="Nb7deb1b3c86543a6a881862108ca2c0d"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasPredictedLeadTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#Event"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#AlternativeSupplier">
+    <owl:disjointWith rdf:resource="http://example.org/ontology#IncumbentSupplier"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/ontology#Supplier"/>
+    <rdfs:subClassOf rdf:resource="http://example.org/ontology#BusinessActor"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbac5090fb43f475fb3f00997bd51497d">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="N9f98b17819204e57b92d61fa3273e62f"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasActualDepartureTime">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na602f892cc7a4ce1b41a66ea451f209f">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/m"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/stock"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasInventoryStock"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1d345137638140b580a1b81c570e8228">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+    <swrl:classPredicate rdf:resource="http://example.org/ontology#SLAViolation"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N09507e59737f4335a9418f7baa29185b">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="Na2a6e71b49814092821ba3ed255749ba"/>
+    <rdf:first rdf:nodeID="N93b8ed10dc3047598d9c8bbd53037646"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc5b83de8dc4a44669dbbbad6fe3dc51c">
+    <rdf:first rdf:nodeID="Nded3c77c6b3c40559028ebddc2e3bdc3"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="Nbac5090fb43f475fb3f00997bd51497d"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne7e988fd4a6942a1a2da6888a007c452">
+    <swrl:classPredicate rdf:resource="http://example.org/ontology#AlternativeSupplier"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/alt"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndeb8f00e448748ec89238e700de095bf">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="Na2c72486dcf54397a2b015815bfb2079"/>
+    <rdf:rest rdf:nodeID="Nef93eb7b784649459afd349c89284e51"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2846dff05f41472599eec176bbdad05f">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/delayEvent"/>
+    <swrl:argument2>CustomsDelay</swrl:argument2>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasReasonCode"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6358003883e145f599b14186d10a0519">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:argument2>Predicted</swrl:argument2>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasRiskStatus"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#EV_Battery_Assembly_Line">
+    <rdf:type rdf:resource="http://example.org/ontology#ProductionDisruption"/>
+    <rdf:type rdf:resource="http://example.org/ontology#RiskEvent"/>
+    <rdf:type rdf:resource="http://example.org/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/ontology#ProductionProcess"/>
+    <hasDisruptionStatus>Risk of Stoppage</hasDisruptionStatus>
+    <hasRiskStatus>Confirmed</hasRiskStatus>
+    <isCriticalPath rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isCriticalPath>
+    <hasCriticalityLevel>Critical</hasCriticalityLevel>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N838569689b784f348bd847afd376dfe8">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#fulfills"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/po"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc2596336550d45dc9e9372b81e18a52d">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="Na4a02dc7fe804b688eafbf15a49c839a"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbe337c0947f046c6ac0e108b146c3fee">
+    <rdf:rest rdf:nodeID="N6981e2d0fa894358ad36ece13dcf507a"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdf:first>DamagedGoods</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6dfa732fffe041528ec10231b2b3638f">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+    <swrl:classPredicate rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6f693ed75c314e23a0aa27488a6084c4">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="N5587374cc06e45059587e404628ca66a"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#transports">
+    <rdfs:domain rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://example.org/ontology#RawMaterial"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N43a3716862754fd6be872fe000dba702">
+    <swrl:argument2 rdf:resource="http://example.org/ontology/rate"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/sla"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasMissedItemPenaltyRate"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N482a48e3fbed43879dc27f648a8d9881">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="Nf0e5fd859f40415484130b7fcc02575c"/>
+    <rdf:rest rdf:nodeID="Nfa93094496e74d61acf96a530fb131b3"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6ca5f71dfbf84f0e9174ea38414969cf">
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasDelayDuration"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/delayEvent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/time"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2896162a7e0848a89883700cb6544bb2">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+    <swrl:arguments rdf:nodeID="Nfbfaf768c9b54419b47c64f759cdb3dc"/>
+    <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N659cd0361a5f400b8de06ae369826031">
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasCriticalityLevel"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/p"/>
+    <swrl:argument2>High</swrl:argument2>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasRouteID">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#Route"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd84a2a67286d47c9a65a2c08c1629ad1">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+    <swrl:classPredicate rdf:resource="http://example.org/ontology#SLAViolation"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc5d48b428f76437b98f03b37125e4915">
+    <rdf:rest rdf:nodeID="N56df64cf4edb44d1804ea13e68810fc2"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="N093a08a9c39a479f932c6a02b64c874a"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N105f11e9b370444cbcb090bb7286d2ec">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/m"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/safe"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasSafetyStockLevel"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6981e2d0fa894358ad36ece13dcf507a">
+    <rdf:first>LateDelivery</rdf:first>
+    <rdf:rest rdf:nodeID="Nb84dc4648730455d808c26b59fdcbef2"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8dd56bac77df464888cef6a8df69d258">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="Naa7dc532faa548a2b447f21627c5ea6a"/>
+    <rdf:first rdf:nodeID="N9455a9b06c6a4444ad578a9af3783290"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na2c72486dcf54397a2b015815bfb2079">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/mat"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#transports"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb9e1252a3c7e4f2e95ef4a85747360fb">
+    <rdf:first rdf:resource="http://example.org/ontology/agreedTime"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Naa7dc532faa548a2b447f21627c5ea6a">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="N636e777f1cfd4adbaf50fb8b6a5d1946"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasRiskStatus">
+    <rdfs:domain rdf:resource="http://example.org/ontology#RiskEvent"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#Event"/>
+    <rdfs:range rdf:nodeID="Na4a9252c7d234946869330dd9a0df1e9"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf0bf0f2fd03344079fe9c5946dc2bf6d">
+    <swrl:head rdf:nodeID="Ncf3f0966eee74c57b346c07464a9a933"/>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+    <rdfs:label>MissedItemViolations</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+    <rdfs:comment></rdfs:comment>
+    <swrl:body rdf:nodeID="Nc5754804ef3546cf854d7d83af0c075f"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ned3b163fc5ce4774a32cc7842be4849d">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasViolationType"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <swrl:argument2>Quality</swrl:argument2>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1f384b53b8bc4623a23ef7f4993b6c19">
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasPlannedDepartureTime"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/planned"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd3642ea10b1c4986a29eb4b9fcff4a0d">
+    <rdf:rest rdf:nodeID="N202ae3d087624308a0f887b07ed9430a"/>
+    <rdf:first rdf:resource="http://example.org/ontology/actual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N427ca901ca924bf78140b94c8ea4f6e5">
+    <rdf:first rdf:resource="http://example.org/ontology/missed"/>
+    <rdf:rest rdf:nodeID="Na5c631c2a319498dbdc00ce51e1e6c59"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Neddf433b2c63491e997a89fbcf0a25a8">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://example.org/ontology/rate"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf88b59630a9343c6909bcfb6cce8b2f8">
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#isTriggeredBy"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/delayEvent"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/d"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9371e3cdb5af47aabc80f087b6fe55af">
+    <rdf:first rdf:nodeID="Nd952c61cd2a94d93a819c62e6f75ce32"/>
+    <rdf:rest rdf:nodeID="N8e85c2489cb94f1ab9f54da83b580fb3"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nabdf62baaad5476a9f315fe377f0e1a8">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/sla"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/agreedTime"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasSLALeadTime"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology/sup">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N604325fa09ad45d8bf08eae1aeae0682">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="N1a50e5f4ccac4e8895b22eae714850fe"/>
+    <rdf:rest rdf:nodeID="Ndf38897bff794630be804b2a532533cf"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbfe4ff096bbc4f5e84823e6d63fd17b5">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasViolationType"/>
+    <swrl:argument2>DamagedGoods</swrl:argument2>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0715c566564441b48acb7bf13e2c77b3">
+    <rdfs:comment>score &gt; 0.5 / score &lt; 0.8</rdfs:comment>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+    <rdfs:label>ReliabilityMedium</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+    <swrl:body rdf:nodeID="N35fede52a5f943e7a2576a94f1e822b0"/>
+    <swrl:head rdf:nodeID="N82d1554b02a64a86a6bd15337063b6cf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology/m">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N14ef7e8060bb4d218924cd9d910d2022">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+    <rdfs:comment>recommend all high tier suppliers</rdfs:comment>
+    <swrl:head rdf:nodeID="N41dc71a2ac78425fb76c79a296d2c4f6"/>
+    <rdfs:label>RecommendationQualifier</rdfs:label>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+    <swrl:body rdf:nodeID="N5d4f5db125964394b8592c367273d3de"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc6b6b593381c46db955e2c4624023634">
+    <rdf:rest rdf:nodeID="N1a58c65123c845be800aa0ba5213e82c"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="N1d6bcb7580fb449984ca868e2c478ab5"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N548f443dcbbb4ddda24d1f07621005af">
+    <rdf:rest rdf:nodeID="Ne75817e3cf2b4cbd93794b2304da401f"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="N76ec890f5c0a42c48a0b00fe51546f87"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndadd0385ae8e495bb5bbb7f454a40549">
+    <swrl:argument2 rdf:resource="http://example.org/ontology/m"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#transports"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2ad76633fad946a1bb1593ec29c9d81b">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+    <swrl:classPredicate rdf:resource="http://example.org/ontology#SLAViolation"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#supplierRegion">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb84dc4648730455d808c26b59fdcbef2">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>UnderShipment</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbdfc643f036e4ef9a6d064632124ed9a">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasViolationType"/>
+    <swrl:argument2>LateDelivery</swrl:argument2>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndeef5d91ea86421ca5abfc358fd8ac98">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="Nbb47e2c33cfc49bda8557391aeb74c2e"/>
+    <rdf:rest rdf:nodeID="Nf72abea228334ebfbf848a92023d84cd"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3bb4cc43f2c243549dfa5819c3c7de5f">
+    <swrl:argument2 rdf:resource="http://example.org/ontology/m"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/inc"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#supplies"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7756e44e9d5d49febf81b5afd1c36603">
+    <rdf:first rdf:nodeID="Nea7a18f4a4664530ab9618f068bf040d"/>
+    <rdf:rest rdf:nodeID="N28aee973928244b69b7b48122c359376"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#singleSourceFlag">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7d9d851730534c19a51e94bf15aac754">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="N072a50c65dfb4bbf924c40b34b3e164e"/>
+    <rdf:first rdf:nodeID="N1108ef992906461c8e68c41eac5213b2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3ed0a846c3444887bc287467650ef58c">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="Nb870844ffeeb498184ab3be3845be248"/>
+    <rdf:rest rdf:nodeID="Nb1652125a9ff4879bfe8851599851505"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasExpectedDeliveryDate">
+    <rdfs:domain rdf:resource="http://example.org/ontology#PurchaseOrder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N996c22d3461b41f8afe0aa983c343243">
+    <rdf:rest rdf:nodeID="Ne6d0e287dd4743b385cbee7733a7c114"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="N855a01d688c9437f800edb906df28d40"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5aa5d4223cc049d7b01205ec81d9b593">
+    <rdf:rest rdf:nodeID="Nd1b840af4e0f4545a43ab83101056e05"/>
+    <rdf:first rdf:nodeID="Ndb47e7435a6d413895043d0bcdc7b770"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc1846cdb878142bf88c8b96bf8aa3044">
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasSafetyStockLevel"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/m"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/safe"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7506c76f950041608fdfdca7be1048ae">
+    <rdf:first rdf:nodeID="N3d93057fe3de42649e99ed7370ab319c"/>
+    <rdf:rest rdf:nodeID="N539955d306f54ecf910600b90b7aaaf3"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne6d0e287dd4743b385cbee7733a7c114">
+    <rdf:first rdf:nodeID="Nb4f3e3430d17443c93b2b160b119ef4b"/>
+    <rdf:rest rdf:nodeID="N36f3ad4b8a144f13a277e2fb6c55a4ae"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb505ab198804429bb24ef553dfc666a8">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <swrl:classPredicate rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf63d674989614bfba363481c7a8caf0b">
+    <rdf:rest rdf:nodeID="Nee4e8657f9774253b5f01a1788e2e770"/>
+    <rdf:first rdf:nodeID="Nc1846cdb878142bf88c8b96bf8aa3044"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N85b2c873fa644a9682dcc37eaae4f263">
+    <swrl:classPredicate rdf:resource="http://example.org/ontology#AlternativeSupplier"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/alt"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6860526321df43169aa4dbd28dcafe0a">
+    <rdf:first rdf:nodeID="N35005617c40d482bbcbc7c5a52d60047"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="N0ced760ac0384f32b357a660603cc701"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasDowntimeDuration">
+    <rdfs:domain rdf:resource="http://example.org/ontology#Event"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#ProductionDisruption"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#RiskEvent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7eeb0a3d1a594e97b8337e1bea471e9b">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="N8e4886422712445fb830fb2e2edcb87b"/>
+    <rdf:rest rdf:nodeID="Nd7e19ea6ac3a40709416bd18603744e4"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc7f88762d6dd42b58cbf3c7bf53dedd6">
+    <rdf:first rdf:nodeID="N1d855da5d2bf4ddbbffb2afd28c854c9"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="Ndaaa4a7b2ba44a0c835c54b4e509eb1b"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4ef3f2f5e4414202bcfd0723e31e0edd">
+    <rdf:first rdf:resource="http://example.org/ontology/ordered"/>
+    <rdf:rest rdf:nodeID="N7f5d303df6604249976af7ae793a5d1f"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#ProductionProcess">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbb47e2c33cfc49bda8557391aeb74c2e">
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#issuedTo"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/sup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/po"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0ced760ac0384f32b357a660603cc701">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="N6358003883e145f599b14186d10a0519"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfcbfb427761e48bc8d95cf031dce8191">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:argument2>Delayed</swrl:argument2>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasDeliveryStatus"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#isEmergencyOrder">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#PurchaseOrder"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9f98b17819204e57b92d61fa3273e62f">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/p"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#isCriticalPath"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</swrl:argument2>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#RiskEvent">
+    <rdfs:subClassOf rdf:resource="http://example.org/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf45011298ec2479aa908ce6fa3202221">
+    <rdf:first rdf:nodeID="N85b2c873fa644a9682dcc37eaae4f263"/>
+    <rdf:rest rdf:nodeID="Ncac065fb79e74e27b9c0a95615186f61"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5234a1271c2149a8bf28ab0efbe83612">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="Nc7703879c41248d8b2fa1e1448942dea"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N43943ca3aa684fdd897951eb054c8de7">
+    <rdf:rest rdf:nodeID="N33f969185bd345feb00fed75a83f0b00"/>
+    <rdf:first rdf:resource="http://example.org/ontology/penalty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology/days">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9546e7b4244840e78c186594219b19d7">
+    <rdf:first rdf:nodeID="N8ce6fbe89d6043c68d7cacd12c47a229"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3bfbe1349b6747c8925a5cce11d274ed">
+    <rdf:first rdf:nodeID="Ne299cac5f130494daf467b17fadce320"/>
+    <rdf:rest rdf:nodeID="Nbd0c6a224c434788882fd6e65e5c770f"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7260ffcee05b4903b2b1e750d9c5647a">
+    <rdfs:label>PenaltyDelay</rdfs:label>
+    <swrl:body rdf:nodeID="N1acd5815e3534aefbe061f4a991737f3"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+    <rdfs:comment></rdfs:comment>
+    <swrl:head rdf:nodeID="N99e3d1c5b7114bcca8fc03b010d6ca44"/>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd5d027ca818a48ebacd0b6bbe3269830">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="N72377d40930f4fffaea94724731a0015"/>
+    <rdf:rest rdf:nodeID="N99a516ba7e0045ad98127c7bc02fa55b"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8369dd82da594b499b4cc6c313b6cccc">
+    <swrl:argument2 rdf:resource="http://example.org/ontology/mat"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#transports"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf35eaaaa95d249f7a331faac5d2e0886">
+    <swrl:classPredicate rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N271d7732de364941ba41c285f0034144">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="N2846dff05f41472599eec176bbdad05f"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N98477bdbe5a94d7d965a79065d8edcb8">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="N8814f90822fd4d1f8a3fdc63c9059f10"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0e12af70485e453b9c6474a0c5e7e0c0">
+    <rdf:first rdf:nodeID="N22beabae860b4164bcb8e5c191b64dab"/>
+    <rdf:rest rdf:nodeID="N3662fcd971364c19a0d572128f762366"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasDeliveredQuantity">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#Event"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology/ordered">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf72abea228334ebfbf848a92023d84cd">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="N44d082d153934eda8fb9054a29848f53"/>
+    <rdf:rest rdf:nodeID="N460bfc9de19b43ea8a692241315e1f28"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb4f3e3430d17443c93b2b160b119ef4b">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/po"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasTotalOrderCost"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/cost"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N56df64cf4edb44d1804ea13e68810fc2">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="N8af25f1016a54107bdafd88bddc1a85a"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne5d1e786b0b34aff94d79c621b7d1ffe">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="Nefe37519f6f448af9f8cd35b9ac2c3ff"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd952c61cd2a94d93a819c62e6f75ce32">
+    <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+    <swrl:arguments rdf:nodeID="Nd3642ea10b1c4986a29eb4b9fcff4a0d"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne2a068b399e94a9fa938caa4a1ea77bc">
+    <rdf:first rdf:nodeID="N2896162a7e0848a89883700cb6544bb2"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="Ndc69c24e6f624e8e92a8ac59d345c417"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb08d0f9d67564138868c9d242ba874eb">
+    <rdf:rest rdf:nodeID="N3aaf6fd7122a49479decc3cee358bca8"/>
+    <rdf:first rdf:resource="http://example.org/ontology/score"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N19fe148c8b7d433787881252bfde39f3">
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasPredictedLeadTime"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/predTime"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7f7ef56968904871a7dd1a9b9d9ea4ff">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="N3fff1f031b46432aab9a5c3e111ee8ac"/>
+    <rdf:rest rdf:nodeID="Ne79fcce78a8541b49b7c5835b5eea6f0"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndcddd1efd8db40a584d4556822431ef9">
+    <rdf:rest rdf:nodeID="Nd5d027ca818a48ebacd0b6bbe3269830"/>
+    <rdf:first rdf:nodeID="N7d5dae44f77b4b0094aa868981cf1319"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N35005617c40d482bbcbc7c5a52d60047">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <swrl:argument2>LateDelivery</swrl:argument2>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasViolationType"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N31b09f84463a436e871c172b4a8391f3">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="Nd547dd3f306344b885d32f84aa324fea"/>
+    <rdf:first rdf:nodeID="Na0bdee97789a498d994fdec7c77e6dd3"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N311ddd5b8b97434d9adf09977cb41155">
+    <owl:oneOf rdf:nodeID="N94cc29e2aa5c4e6987a19625a467e084"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne192c14bd59c42c19d77d5ad1325a9f6">
+    <swrl:arguments rdf:nodeID="N2c6beb5af5d641a2bf2729a0d0bc0af6"/>
+    <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#isCriticalPath">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#ProductionProcess"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncac065fb79e74e27b9c0a95615186f61">
+    <rdf:first rdf:nodeID="N8c489d29671e46928dcdd4f6af3e12ec"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5ef880f2cd964af9984ec4ab24a4b403">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdf:first>Confirmed</rdf:first>
+    <rdf:rest rdf:nodeID="N0e2bad32cafa442e84174b0f3cadb0ce"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Naae380bd9ef74f0f9cff2b108f3535f7">
+    <rdf:first rdf:nodeID="N4afe374f7b4d403fb93816d43ab8f0dd"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="N98477bdbe5a94d7d965a79065d8edcb8"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Naf67af7eb41b4205b121462dc2a3496d">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="N7eeb0a3d1a594e97b8337e1bea471e9b"/>
+    <rdf:first rdf:nodeID="N618864f8c52f4ddea8307b5ab60135c0"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N471c9b0e1a444b939d3a6b8851fccec3">
+    <owl:oneOf rdf:nodeID="Nbe337c0947f046c6ac0e108b146c3fee"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology/delivered">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N700ea3a90f12459693fbc5a0e2a45960">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/m"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/safe"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasSafetyStockLevel"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N87e754687cef4906bf1bcad2a0648c8b">
+    <rdf:first rdf:nodeID="N89d2b861ff4446bd9538bf77101c1ad9"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na066b5aed3744bd6bf0798d7d549507f">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdf:first>Medium</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology/planDep">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7f5d303df6604249976af7ae793a5d1f">
+    <rdf:first rdf:resource="http://example.org/ontology/delivered"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0abcfd2cb42942679a1786959af3d69d">
+    <rdf:first rdf:resource="http://example.org/ontology/planArr"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd1b840af4e0f4545a43ab83101056e05">
+    <rdf:first rdf:nodeID="Nc62650ac8b70484ab96d227f8de35328"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="N84d99c1c9b484ff582a92986c1d08bba"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8ebc8fccbc6a406499a91badb0bb57de">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="N0f5909df88e04fcea01daa2d493dacb1"/>
+    <rdf:rest rdf:nodeID="N2874484e5d50450289b8fe27d333a931"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2d8c856e3e364b148f799cf49aea6d9f">
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasOrderedQuantity"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/po"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/ordered"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6388ee9fa882409180e5778abb3fe7e9">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="N526d4a13d33a4c6895595a81a34a5bb9"/>
+    <rdf:first rdf:nodeID="Nc38b052671d8449d85c793fcbb367e6e"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology/rate">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na80e340452b7485bba11aca23933b2db">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="Ne82411737027455ca069ccea85d3fa79"/>
+    <rdf:first rdf:nodeID="N9a16627bf43449d499a9b954cc3abd1a"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nac2498311b8c4218a07ecaf16012f94d">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="N77df28e4245f4723a0b1bd7fc0e48b6a"/>
+    <rdf:first rdf:nodeID="Ndb98f78c309648c991f7caf2fdbdab9f"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#poType">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc8bc2770783e40b983a7bc89e2b1f445">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="N0a39e0913979435798512fbcc5708782"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndc69c24e6f624e8e92a8ac59d345c417">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="Nf160dc9974354c3ebcf8b0c2cfc25f4d"/>
+    <rdf:first rdf:nodeID="N049296dc8b204c46920b06ae2b7d3095"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#savingsPct">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1db16d2f560a455ab6159987e2c21593">
+    <rdf:first rdf:resource="http://example.org/ontology/safe"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#SLAViolation">
+    <rdfs:subClassOf rdf:resource="http://example.org/ontology#RiskEvent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N50851363cec84effa352cab606fff1dc">
+    <rdf:rest rdf:nodeID="Nc5d48b428f76437b98f03b37125e4915"/>
+    <rdf:first rdf:nodeID="N6e02270a44c34af18b0a199fb49eb708"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfd3d8efd7bdb45c5a5301db8d3869122">
+    <rdf:first rdf:nodeID="N1d345137638140b580a1b81c570e8228"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="Nc8d3762670cd4dd68cf9ca1c6c2ee63f"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Route">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N636e777f1cfd4adbaf50fb8b6a5d1946">
+    <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+    <swrl:arguments rdf:nodeID="Nb08d0f9d67564138868c9d242ba874eb"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N94826ed959fc46418350a46a2b319f1b">
+    <rdf:first rdf:resource="http://example.org/ontology/safe"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N933aaceae6de4d048f80c3d82f51e823">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="Nf7ed221d9c6249d7adda7e3cf737c5dd"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5e29f3ccfbbd4a1f8456ec77f835ec0d">
+    <swrl:argument2 rdf:resource="http://example.org/ontology/p"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#affectsProcess"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/m"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasMinQualityThreshold">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#SLA_Agreement"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf7ed221d9c6249d7adda7e3cf737c5dd">
+    <swrl:argument2>High</swrl:argument2>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/s"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasReliabilityTier"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N78416140589e496183317a8af54f2481">
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasSLA"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/sla"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/sup"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf160dc9974354c3ebcf8b0c2cfc25f4d">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="N9fedb0dd7bab40f2bb0eb20b9bf5e10d"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N501efea78dc247ed8b35879143bdcb8a">
+    <swrl:argument2 rdf:resource="http://example.org/ontology/po"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#fulfills"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasDimensions">
+    <rdfs:domain rdf:resource="http://example.org/ontology#RawMaterial"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasDeliveryStatus">
+    <rdfs:domain rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#Event"/>
+    <rdfs:range rdf:nodeID="N9425227194f84e16a2b8743b7d7c16c9"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N569ef7a5e3ae4e6f84bfbb41a410a0b1">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/po"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#fulfills"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8b1e06c10d3a456faa1d6d1c51d78284">
+    <rdf:rest rdf:nodeID="N0f842640054c4695aa8328742efea8f8"/>
+    <rdf:first rdf:nodeID="N751e3471f7ae4f02b46cfd8d0a3dd9ab"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne82411737027455ca069ccea85d3fa79">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="N838569689b784f348bd847afd376dfe8"/>
+    <rdf:rest rdf:nodeID="N4ee2cf1cf5b047c7947b3643b89b699e"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N220be383aaf3489caa6f8deaf5bfd294">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="N1c44d107eec7406ea032400221a1a0b9"/>
+    <rdf:first rdf:nodeID="Nf1fdcc598c8b4e61a27a4c70b2c59fc1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N80656f69303745459cd045209ffa7a9e">
+    <rdf:first rdf:nodeID="Nd4b02347764649b19922eea808369355"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasVolume">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#RawMaterial"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na30c04895bd9472c8128a9e98e36f8f6">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="Nf88b59630a9343c6909bcfb6cce8b2f8"/>
+    <rdf:rest rdf:nodeID="N643eb71ccdc54ae0b058ccabe1a57aad"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncfbd7c1e63c04c37b3c27fef2aaf0a21">
+    <rdf:first rdf:nodeID="Na85b999784284b3e8d78fcea92d4519a"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="N7d9d851730534c19a51e94bf15aac754"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasProcessID">
+    <rdfs:domain rdf:resource="http://example.org/ontology#ProductionProcess"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfcdbe25822434c0a9ac20af6e6f132cc">
+    <rdf:first>Delayed</rdf:first>
+    <rdf:rest rdf:nodeID="Nb7c57b1e3d734c77beed4a7cd0c5b7c3"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasPlannedArrivalDate">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#Event"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na216980ef0f84971bea4eb8b5b4327f2">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="Ndfd441a48a9547bab4f0a4785e85a138"/>
+    <rdf:rest rdf:nodeID="Naa68820e6d284678b831dc89930ae78a"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasQualityScore">
+    <rdfs:domain rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#localInternational">
+    <rdfs:domain rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N29c7b9bf0f0f44fdacf887e0b8ea9b30">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <swrl:classPredicate rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2874484e5d50450289b8fe27d333a931">
+    <rdf:rest rdf:nodeID="N7506c76f950041608fdfdca7be1048ae"/>
+    <rdf:first rdf:nodeID="N43a3716862754fd6be872fe000dba702"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology/agreedTime">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Customs_Delay_Log">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://example.org/ontology#RiskEvent"/>
+    <rdf:type rdf:resource="http://example.org/ontology#Event"/>
+    <rdf:type rdf:resource="http://example.org/ontology#DelayEvent"/>
+    <hasDelayDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hasDelayDuration>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology/sla">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N88736c02b35e4f0894e6337b27766521">
+    <rdf:first rdf:nodeID="N19fe148c8b7d433787881252bfde39f3"/>
+    <rdf:rest rdf:nodeID="N3595c34d12664e1982184dce35fc61eb"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#paymentTerms">
+    <rdfs:domain rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nacf2593368f04b4e8a2620eaf18ea63c">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="N60d13fd04e364c1694366f5e606b1f67"/>
+    <rdf:first rdf:nodeID="N824e9e73d15343b5a0725c1c9c67ab4a"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#affectsProcess">
+    <rdfs:range rdf:resource="http://example.org/ontology#ProductionProcess"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#RawMaterial"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology/mat">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology/p">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Event">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N36f3ad4b8a144f13a277e2fb6c55a4ae">
+    <rdf:rest rdf:nodeID="N86c561b48f394dd8acdeba4a3cb38502"/>
+    <rdf:first rdf:nodeID="N3e6990cb601d4a0fb9bf53c4a22b22be"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N03c359b98719407daff4cf3b525f4498">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/p"/>
+    <swrl:classPredicate rdf:resource="http://example.org/ontology#ProductionDisruption"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Naa68820e6d284678b831dc89930ae78a">
+    <rdf:first rdf:nodeID="Ncd42f37d472140fcb74b8814789fb962"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2272b2713dba44e9ae6ccd31be3726f2">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="N0da7c96b9cbe4f059f36f85d9581072e"/>
+    <rdf:rest rdf:nodeID="N1c0f0ed58d1c4c4c9b173ce1b1ca67ce"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#isSustainabilityCertified">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#Supplier"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#BusinessActor"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfd6325456f5d4fd7954652a61637cc83">
+    <rdf:rest rdf:nodeID="Neddf433b2c63491e997a89fbcf0a25a8"/>
+    <rdf:first rdf:resource="http://example.org/ontology/cost"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N22beabae860b4164bcb8e5c191b64dab">
+    <swrl:argument2 rdf:resource="http://example.org/ontology/safe"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasSafetyStockLevel"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/m"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N69b25d1095264ef19588329eb6a37e9f">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="Ne97788267ef248cd977b8b96c88ac9f2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndf97495d16df472c831a8477c91e1535">
+    <rdf:rest rdf:nodeID="N4cd92c6141814aab8524990dd2c74c2c"/>
+    <rdf:first>Low</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9b8f774699314b81a2df84084f90a670">
+    <rdf:first rdf:nodeID="Na2a17947316947709adf3177fe52675b"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1f1d1f5b933e42429a1549690a3a8270">
+    <rdf:first rdf:nodeID="N342fc9b32af24ef4b5a7ad8399773aa1"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="N326923fd0cde402dbf29aad4407306bd"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfe022657ed7e4d60af2fe1d1baacb2af">
+    <swrl:classPredicate rdf:resource="http://example.org/ontology#DelayEvent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4afe374f7b4d403fb93816d43ab8f0dd">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/rate"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/sla"/>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasQualityPenaltyRate"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd24e71fda4b14f30bfff7481d9837ccc">
+    <rdf:first rdf:nodeID="N6f1ea0273bca40a193d1839d20b7ba3b"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd463657e7ede48da8bf26d8770823f96">
+    <rdf:first rdf:resource="http://example.org/ontology/rate"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology/planArr">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasSLA">
+    <rdfs:range rdf:resource="http://example.org/ontology#SLA_Agreement"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#Supplier"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#BusinessActor"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N03c887bd65664206a5cc52e7e6311e3e">
+    <rdf:first>High</rdf:first>
+    <rdf:rest rdf:nodeID="Ndf97495d16df472c831a8477c91e1535"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#PurchaseOrder">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N892e0f8022d6406183c572eb583eeb91">
+    <rdf:rest rdf:nodeID="Nb4999d4cb08d49648ab8a32d1547f625"/>
+    <rdf:first>Scheduled</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasContractID">
+    <rdfs:domain rdf:resource="http://example.org/ontology#SLA_Agreement"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N643eb71ccdc54ae0b058ccabe1a57aad">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="N6ca5f71dfbf84f0e9174ea38414969cf"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3b2c59ab881544e3949bade51fde7c6f">
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasDelayPenaltyRate"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/rate"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/sla"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology/missed">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na5c631c2a319498dbdc00ce51e1e6c59">
+    <rdf:first rdf:resource="http://example.org/ontology/rate"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N52209f6f107349678cb61df9a39fe0b2">
+    <rdf:first rdf:nodeID="N07bf652d50a54b189f96f7a223ebd2f5"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="N9b8f774699314b81a2df84084f90a670"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology/cost">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1a50e5f4ccac4e8895b22eae714850fe">
+    <swrl:classPredicate rdf:resource="http://example.org/ontology#SLAViolation"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8627a997af154a89afeb6256fe34cb6b">
+    <rdf:first rdf:resource="http://example.org/ontology/delivered"/>
+    <rdf:rest rdf:nodeID="Nc5d60e2526f544a89ff109937f8fb632"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N460bfc9de19b43ea8a692241315e1f28">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="N55c0a7e142644ee4b5e796b760651a83"/>
+    <rdf:first rdf:nodeID="N3b2c59ab881544e3949bade51fde7c6f"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N427f41856e2c4f3d897bbb887444988c">
+    <rdf:first rdf:resource="http://example.org/ontology/actual"/>
+    <rdf:rest rdf:nodeID="Ncd343bfeb9e54a4e9f5055d996b019ec"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology/actual">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nef93eb7b784649459afd349c89284e51">
+    <rdf:rest rdf:nodeID="Ncedcc57d86db4a3a86658f7bb877d2f3"/>
+    <rdf:first rdf:nodeID="Nc178929864fa4dd8aaa02d2d1ba787f0"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1e49e13b5d09409da4e72438da91c595">
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#isTriggeredBy"/>
+    <swrl:argument2 rdf:resource="http://example.org/ontology/d"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:argument1 rdf:resource="http://example.org/ontology/delayEvent"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8e85c2489cb94f1ab9f54da83b580fb3">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="N3ba58d36234040ac85eac24879cfcd02"/>
+    <rdf:rest rdf:nodeID="N271d7732de364941ba41c285f0034144"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5d4f5db125964394b8592c367273d3de">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="Na216980ef0f84971bea4eb8b5b4327f2"/>
+    <rdf:first rdf:nodeID="Ne7e988fd4a6942a1a2da6888a007c452"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3e446300e2a845e89064a587cec973d9">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+    <swrl:head rdf:nodeID="N8d8ccab175d944a18f4d4c4ca6b1fc21"/>
+    <swrl:body rdf:nodeID="Nb83125d11a3a4831af7c6e94cef6a50e"/>
+    <rdfs:comment></rdfs:comment>
+    <rdfs:label>TransportDelay</rdfs:label>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N567a470c9106406c8ca22fe133c72d02">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.8</rdf:first>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N571ff50295214a33821231029bac2b7d">
+    <swrl:arguments rdf:nodeID="N4dbce5e7a1e545bea7519bd2e5eeced9"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+    <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThanOrEqual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8ce6fbe89d6043c68d7cacd12c47a229">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <swrl:argument2>Confirmed</swrl:argument2>
+    <swrl:propertyPredicate rdf:resource="http://example.org/ontology#hasRiskStatus"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5e42b8388afd4b7798c350ef6f5bf094">
+    <swrl:arguments rdf:nodeID="Nca589555196d46d087776746984851f9"/>
+    <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3376410fcfdd4503896fcf0071e1983b">
+    <swrl:argument1 rdf:resource="http://example.org/ontology/d"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+    <swrl:classPredicate rdf:resource="http://example.org/ontology#SLAViolation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#hasRouteRiskScore">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#Route"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf77d544a12914c8aaf8d5090aa056fc2">
+    <rdf:rest rdf:nodeID="Nb9e1252a3c7e4f2e95ef4a85747360fb"/>
+    <rdf:first rdf:resource="http://example.org/ontology/predTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N60d13fd04e364c1694366f5e606b1f67">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="N8a825534d5bc49e195e6067edcce8dfe"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N84d99c1c9b484ff582a92986c1d08bba">
+    <rdf:rest rdf:nodeID="N9371e3cdb5af47aabc80f087b6fe55af"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="N4f526256e15b4baa856a036a6e4d0d9a"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Supplier_Alpha">
+    <hasReliabilityTier>Low</hasReliabilityTier>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N202ae3d087624308a0f887b07ed9430a">
+    <rdf:first rdf:resource="http://example.org/ontology/planned"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N85fc3fdca32746a09a60e2f58f8461ab">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdf:first rdf:resource="http://example.org/ontology/score"/>
+    <rdf:rest rdf:nodeID="N85319dcba518430980c8b7294bb6978c"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#appliesTo">
+    <rdfs:range rdf:resource="http://example.org/ontology#RawMaterial"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#SLA_Agreement"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N273f4c839ba24e438eb751eb135048c5">
+    <rdf:first rdf:nodeID="Nbdfc643f036e4ef9a6d064632124ed9a"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="N9546e7b4244840e78c186594219b19d7"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd7e19ea6ac3a40709416bd18603744e4">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="N29d23fa53f4d4ac0bdd8ebb780b37627"/>
+    <rdf:rest rdf:nodeID="Na910de3f3f05428480eff3140184182b"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na910de3f3f05428480eff3140184182b">
+    <rdf:first rdf:nodeID="N5e29f3ccfbbd4a1f8456ec77f835ec0d"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="Nafe1025138cb4a419fc4fd640f7f9820"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0e2bad32cafa442e84174b0f3cadb0ce">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>Predicted</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology/inc">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N76dab7a7e3134b2ea72910129f168525">
+    <rdf:first rdf:resource="http://example.org/ontology/safe"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbd0c6a224c434788882fd6e65e5c770f">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="N8dd56bac77df464888cef6a8df69d258"/>
+    <rdf:first rdf:nodeID="N8841c2e566c543ca9abeb2b31b8a5fad"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology/penalty">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#unitOfMeasure">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#penaltyRatePerDay">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology/s">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N13a23e54d1ea41779e657baecaece470">
+    <rdf:rest rdf:nodeID="N6860526321df43169aa4dbd28dcafe0a"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="Nd84a2a67286d47c9a65a2c08c1629ad1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne366101f4ad44d2c8cf0e063becbe201">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="Na51c50030ecd4791a1cdd3c0a54d9bac"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#preferredSupplier">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#DeliveryEvent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#RawMaterial">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N029f1c39b25f4a8ca6a3e4b937bfc596">
+    <rdf:rest rdf:nodeID="N567a470c9106406c8ca22fe133c72d02"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdf:first rdf:resource="http://example.org/ontology/score"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology/po">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N800c9f36671442a2a0e5bbf03232e27e">
+    <rdf:rest rdf:nodeID="N745df788c6b34404bbe126a30557fe21"/>
+    <rdf:first>PortCongestion</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology/delayEvent">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology/alt">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology/planned">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology/score">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+</rdf:RDF>
