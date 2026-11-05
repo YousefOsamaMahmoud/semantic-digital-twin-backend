@@ -1,874 +1,571 @@
-# Semantic Digital Twin — Supply Chain Risk Management Platform
+<div align="center">
 
-### Cavengers Graduation Project | Backend Developer: Yousef
+# Semantic Digital Twin — Supply Chain Risk Detection & Mitigation Platform
 
-> **Awarded Project:** *Semantic Digital Twin for Raw Material Supply Detection and Resolution*
-> **Stack:** Python 3.12 · FastAPI · LangGraph · LangChain · GraphDB (SPARQL/OWL 2) · Scikit-Learn · Pydantic v2 · pdfplumber · SPARQLWrapper
-> **Architecture:** Strict 3-Tier Layered (API → Services → Knowledge Base)
+**Real-Time Supply Chain Risk Detection Engine · OWL 2 Semantic Reasoning · LangGraph Multi-Agent Orchestration · Predictive ML & Role-Based React Dashboard**
+
+[![Python](https://img.shields.io/badge/Python-3.12+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.132-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![LangGraph](https://img.shields.io/badge/LangGraph-1.1-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white)](https://langchain-ai.github.io/langgraph/)
+[![Google Gemini](https://img.shields.io/badge/Google_Gemini_%2F_LLMs-NLP_Pipeline-8E75B2?style=for-the-badge&logo=googlegemini&logoColor=white)](https://ai.google.dev/)
+[![Ontotext GraphDB](https://img.shields.io/badge/GraphDB_%2F_Neo4j-SPARQL_1.1_%26_OWL_2-E10098?style=for-the-badge&logo=graphql&logoColor=white)](https://graphdb.ontotext.com/)
+[![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-1.9-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)](https://scikit-learn.org/)
+[![React](https://img.shields.io/badge/React-19.2-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
+[![Pydantic](https://img.shields.io/badge/Pydantic-v2.12-E92063?style=for-the-badge&logo=pydantic&logoColor=white)](https://docs.pydantic.dev/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-F59E0B?style=for-the-badge)](./LICENSE)
+
+</div>
 
 ---
 
 ## Table of Contents
 
-1. [Project Overview](#1-project-overview)
+1. [Executive Summary](#1-executive-summary)
 2. [System Architecture](#2-system-architecture)
-3. [Source Modules](#3-source-modules)
-4. [Core Features (LangGraph & ML Pipelines)](#4-core-features-langgraph--ml-pipelines)
-5. [API Endpoints](#5-api-endpoints)
-6. [Data Models](#6-data-models)
-7. [Resilience & Fallback Strategy](#7-resilience--fallback-strategy)
-8. [Setup & Installation](#8-setup--installation)
-9. [Running the Server](#9-running-the-server)
-10. [Testing](#10-testing)
-11. [Project Structure](#11-project-structure)
-12. [Master Status Dashboard](#12-master-status-dashboard)
+3. [Semantic Reasoning, OWL 2 Ontology & SPARQL Inference](#3-semantic-reasoning-owl-2-ontology--sparql-inference)
+4. [LangGraph Multi-Agent & NLP Extraction Pipelines](#4-langgraph-multi-agent--nlp-extraction-pipelines)
+5. [Machine Learning Delay Prediction & Supplier Scoring](#5-machine-learning-delay-prediction--supplier-scoring)
+6. [React Frontend & Role-Based Control Tower](#6-react-frontend--role-based-control-tower)
+7. [REST API Reference](#7-rest-api-reference)
+8. [Data Models & Schemas](#8-data-models--schemas)
+9. [Resilience & Deterministic Fallback Strategy](#9-resilience--deterministic-fallback-strategy)
+10. [Monorepo Folder Structure](#10-monorepo-folder-structure)
+11. [Local Setup & Installation](#11-local-setup--installation)
+12. [Testing & Verification](#12-testing--verification)
 
 ---
 
-## 1. Project Overview
+## 1. Executive Summary
 
-The **Semantic Digital Twin** is an intelligent backend platform that monitors, analyses, and mitigates supply chain disruptions in real time. It transforms unstructured supplier contracts (PDFs) into structured, machine-readable knowledge graph triples, then continuously evaluates incoming IoT telemetry against those contracts to detect delays, SLA violations, and production risks — all through a pipeline of autonomous AI agents orchestrated by LangGraph.
+The **Semantic Digital Twin** is an end-to-end, real-time supply chain risk detection and mitigation platform built across four tightly integrated domains: **Backend (`FastAPI` + `LangGraph`)**, **Semantic Knowledge Graph (`Ontotext GraphDB` / `OWL 2` / `RDFLib` / `Neo4j`-compatible graph workflows)**, **Machine Learning (`Scikit-Learn`)**, and an interactive **Control Tower Frontend (`React 19`)**.
 
-The system bridges four domains:
+It transforms unstructured supplier Service Level Agreement (SLA) contracts (PDF, DOCX, TXT) into machine-readable RDF triples, continuously evaluates live IoT logistics telemetry and purchase orders using predictive ML models, and applies OWL 2 semantic reasoning to infer cascading production risks before assembly lines halt.
 
-- **Document Intelligence:** Raw PDF contracts are ingested by a LangGraph-orchestrated LLM pipeline with automatic guardrails, self-correcting validation loops (up to 3 retries), and resilient fallback mechanisms that simulate LLM responses when the API is unreachable.
-- **Semantic Knowledge Graph:** Extracted data is lifted into RDF triples under a strict OWL ontology namespace (`PREFIX : <http://example.org/ontology#>`) and persisted in Ontotext GraphDB, where OWL reasoning infers implicit relationships (e.g., delayed supplier → at-risk product).
-- **Multi-Agent Risk Assessment:** IoT telemetry events (delay predictions, weather disruptions) trigger a LangGraph risk engine that queries the knowledge graph for SLA context, runs LLM-based risk analysis, and produces targeted manager alerts routed to the correct role (Production, Procurement, or Logistics Manager).
-- **NL-to-SPARQL Chat Interface:** Users can ask supply-chain questions in natural language; a LangGraph agent translates them to SPARQL, executes them against GraphDB with automatic error self-correction, and returns human-readable answers.
+### Core Capabilities
 
-A **human-in-the-loop** gate ensures that no AI-generated data reaches the knowledge graph without explicit approval from a procurement manager.
+- **NLP Contract-to-RDF Pipeline (Google Gemini / OpenRouter / OpenAI LLMs + LangGraph):** Ingests raw PDF/DOCX/TXT SLA contracts through a 3-node self-correcting LangGraph workflow (`Guardrail → Extractor → Semantic Validator`) with up to 3 retry loops, Human-in-the-Loop (HITL) review, live side-by-side Digital Twin SLA diffing, and deterministic semantic lifting into RDF triples.
+- **OWL 2 Ontology & Automated SPARQL Inference:** Models the entire manufacturing supply chain under `PREFIX : <http://example.org/ontology#>` (Suppliers, Raw Materials, SLA Contracts, Purchase Orders, Inventory Buffers, Assembly Lines, and Finished Products). GraphDB's OWL reasoner automatically infers `:isAtRisk` and `:hasStatus` cascades when supplier deliveries breach contractual thresholds or safety stock buffers are compromised.
+- **Real-Time IoT Risk Engine & Multi-Agent Alert Routing:** Background telemetry streaming + on-demand IoT injection trigger a 3-node LangGraph Risk Engine (`Fetch SLA Context → Risk Analyst Agent → Role-Targeted Alert Generator`) that computes financial penalties and routes actionable alerts to **Procurement**, **Logistics**, or **Production** managers.
+- **Dual Predictive ML Engine (Procurement + Logistics):**
+  - *Procurement Model:* A 300-estimator `RandomForestClassifier` with 109 engineered features that predicts Purchase Order (PO) delay probability and risk tier *before* an order is placed.
+  - *Logistics Model:* A transit delay regression pipeline that predicts real-time shipment delay hours from GPS speed, route congestion, weather severity, and cargo telemetry.
+  - *Dynamic Supplier Evaluator:* Exponential recency-decay scoring engine (`supplier_evaluator_service.py`) that recalculates supplier reliability scores in GraphDB from historical transaction sheets and live PO completions.
+- **NL-to-SPARQL Conversational Assistant:** A 4-node LangGraph agent (`Domain Guardrail → SPARQL Developer → GraphDB Executor → Customer Service`) that translates natural-language supply-chain questions into live SPARQL 1.1 queries with automatic syntax error self-correction.
 
 ---
 
 ## 2. System Architecture
 
-The backend follows a strict **3-Tier Layered Architecture** that enforces separation of concerns. No module in a higher layer may bypass the layer below it.
+The platform enforces a **Strict 3-Tier Layered Backend Architecture** (`API Controllers → Business & Agent Services → Knowledge Base`) coupled with dedicated **Data Science**, **Machine Learning**, and **React Frontend** workspaces.
 
 ```
-+------------------------------------------------------------------+
-|               Layer 1: API / Controller (api/)                     |
-|                                                                     |
-|  Receives HTTP requests from the React frontend                    |
-|  Validates all input with Pydantic schemas (auto 422 on mismatch)  |
-|  Delegates to service layer — ZERO business logic, ZERO SPARQL     |
-|  9 endpoints across 2 routers (sandbox + dashboard)                 |
-|  All blocking DB/LLM calls dispatched via run_in_executor           |
-+-----------------------------+--------------------------------------+
-                              |
-                              v
-+------------------------------------------------------------------+
-|               Layer 2: Service / Business Logic (services/)         |
-|                                                                     |
-|  llm_service.py       — LLMClient singleton, SLA extraction graph  |
-|  lifting_service.py   — Pydantic → SPARQL INSERT, namespace guard  |
-|  risk_engine_service.py — IoT → risk analysis → manager alert      |
-|  chat_service.py      — NL question → SPARQL → answer (4-node)     |
-|  dashboard_service.py — SPARQL query wrappers for dashboard API    |
-|                                                                     |
-|  All LLM calls go through LLMClient (thread-safe singleton)        |
-|  with automatic retry + deterministic fallback on 429/quota errors |
-+-----------------------------+--------------------------------------+
-                              |
-                              v
-+------------------------------------------------------------------+
-|               Layer 3: Knowledge Base (knowledge_base/)              |
-|                                                                     |
-|  connection.py  — Stateless SPARQLWrapper singleton, reads .env     |
-|  repository.py  — SPARQL INSERT for SLA triples + OWL inference    |
-|                   query for at-risk products                        |
-|                                                                     |
-|  Every SPARQL statement uses PREFIX : <http://example.org/ontology#>|
-|  Named graphs: ontology axioms → http://example.org/ontology/       |
-|                contract data   → http://example.org/contracts/      |
-+------------------------------------------------------------------+
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                        React 19 Control Tower (Frontend/my-app)                        │
+│   RBAC Views (Procurement · Production · Logistics · Admin) · Live KPIs & Alerts       │
+│   Side-by-Side Digital Twin SLA Comparison · Inventory Risk · NL-to-SPARQL Chat        │
+└───────────────────────────────────────────┬────────────────────────────────────────────┘
+                                            │ HTTP / REST JSON (Port 3000 → Port 8001)
+                                            ▼
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                     Layer 1: FastAPI Controllers (Backend/api/)                        │
+│   • api/sandbox.py   (10 endpoints: SLA PDF upload, HITL confirm, IoT, PO ML risk)     │
+│   • api/dashboard.py (13 endpoints: OWL risk scores, KPIs, alerts, fallback, NL chat)  │
+│   • Strict Pydantic v2 validation (auto-422) · Async non-blocking run_in_executor      │
+│   • Zero business logic · Zero direct knowledge_base imports                           │
+└───────────────────────────────────────────┬────────────────────────────────────────────┘
+                                            │
+                                            ▼
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│               Layer 2: Multi-Agent, ML & Domain Services (Backend/services/)           │
+│   • llm_service.py                 — Thread-safe LLMClient (Gemini / OpenRouter /      │
+│                                      OpenAI) + 3-node SLA Extraction LangGraph         │
+│   • lifting_service.py             — SemanticLifter (Pydantic → SPARQL INSERT DATA)    │
+│   • risk_engine_service.py         — 3-node IoT Risk Analysis & Alert Routing Graph    │
+│   • chat_service.py                — 4-node NL-to-SPARQL Self-Correcting Agent         │
+│   • order_risk_service.py          — 109-feature Random Forest PO Delay Predictor      │
+│   • telemetry_simulator_service.py — Background IoT Replay + Logistics ML Regressor    │
+│   • supplier_evaluator_service.py  — Recency-Decay Supplier Reliability Scoring        │
+│   • dashboard_service.py           — SPARQL Query Wrappers, RBAC KPIs & Fallbacks      │
+└───────────────────────────────────────────┬────────────────────────────────────────────┘
+                                            │
+                                            ▼
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                 Layer 3: Semantic Knowledge Base (Backend/knowledge_base/)             │
+│   • connection.py — Stateless SPARQLWrapper HTTP Broker (.env configured)              │
+│   • repository.py — Named Graph Separation & OWL 2 Inference Queries                   │
+│     ├─ Ontology Graph : <http://example.org/ontology/>                                 │
+│     ├─ Contract Graph : <http://example.org/contracts/>                                │
+│     └─ Default Namespace: PREFIX : <http://example.org/ontology#>                      │
+└───────────────────────────────────────────┴────────────────────────────────────────────┘
 ```
 
-### Core Stack
+### Technology Stack Overview
 
-| Component | Technology | Role |
+| Layer / Domain | Technology | Purpose |
 |---|---|---|
-| **API Framework** | FastAPI + Uvicorn 0.41 | Async HTTP server, automatic OpenAPI/Swagger docs at `/docs` |
-| **Multi-Agent Orchestration** | LangGraph 1.1 | Stateful graph-based agent pipelines with conditional routing |
-| **LLM Integration** | LangChain (ChatOpenAI) | Structured output extraction, free-text generation, risk analysis |
-| **Knowledge Graph** | Ontotext GraphDB (SPARQL 1.1, OWL 2) | Semantic triple store with OWL reasoning engine |
-| **Document Parsing** | pdfplumber 0.11 / docx / txt | Extract raw text from uploaded PDF, DOCX, and TXT contracts |
-| **Data Validation** | Pydantic v2.12 | Strict schema enforcement with auto-422 rejection |
-| **Predictive ML Classifiers** | Scikit-Learn (Random Forest) | Pre-trained models predicting purchase order planning delay risk and real-time logistics delays |
-| **Data Processing** | Pandas & NumPy | High-performance data manipulation, feature engineering, and evaluation score decay math |
-| **Resilience Layer** | Custom LLMClient singleton | Thread-safe, automatic retry (2x), deterministic fallback on 429/quota |
-| **SPARQL Client** | SPARQLWrapper 2.0 | Stateless HTTP client (one fresh connection per request) |
+| **API & Runtime** | Python 3.12+, FastAPI 0.132, Uvicorn 0.41 | High-throughput async REST API with automatic OpenAPI/Swagger documentation |
+| **Agent Orchestration** | LangGraph 1.1, LangChain 1.2 | Stateful cyclic multi-agent workflows with guardrails and self-correction loops |
+| **LLM & NLP Providers** | `google-genai` (Google Gemini), `langchain-google-genai`, `langchain-openai` (OpenRouter / DeepSeek / GPT) | Structured SLA contract extraction (`with_structured_output`), risk reasoning, and NL-to-SPARQL generation |
+| **Semantic Graph & Reasoning** | Ontotext GraphDB, OWL 2 RL/Horst, SPARQL 1.1, RDFLib 7.6, Neo4j Driver 6.1 | RDF triple storage, named graph isolation, automated ontology inference, and graph queries |
+| **Machine Learning** | Scikit-Learn 1.9, Pandas 3.0, NumPy 2.4 | Random Forest procurement delay classification, transit delay regression, supplier reliability scoring |
+| **Document Parsing** | `pdfplumber`, `pdfminer.six`, `pypdfium2`, `python-docx`, `openpyxl` | Multi-format ingestion for PDF, DOCX, TXT contracts and Excel/CSV transaction logs |
+| **Data Validation** | Pydantic v2.12 | Strict request/response schema validation and structured LLM output enforcement |
+| **Frontend UI** | React 19.2, React Scripts 5.0, CSS Variables | Role-based Supply Chain Control Tower dashboard |
 
 ---
 
-## 3. Source Modules
+## 3. Semantic Reasoning, OWL 2 Ontology & SPARQL Inference
 
-### `main.py` — Application Entry Point
-- Calls `load_dotenv()` before any other import to ensure environment variables are loaded robustly.
-- Bootstraps the FastAPI app with title, description, and version `0.2.0`.
-- Registers both routers: `sandbox_router` and `dashboard_router`.
-- Provides a root health-check endpoint at `GET /`.
+The semantic layer (`Data_Science/ontology/` and `Backend/knowledge_base/`) models supply chain entities and domain axioms using **OWL 2** (`Semantic Digital Twin Project.rdf` and `Semantic Digital Twin Project Inferred.rdf`).
 
-### `api/sandbox.py` — SLA Sandbox Router
-- **Layer 1** controller with 5 endpoints under prefix `/api/sandbox`.
-- Contains zero business logic — all intelligence lives in the service layer.
-- Uses `asyncio.get_running_loop().run_in_executor()` for all blocking SPARQL/LLM calls to prevent event loop blocking.
-- Imports only from `services/` and `models/` — never from `knowledge_base/` directly.
+### Golden Rules of the Knowledge Graph
 
-### `api/dashboard.py` — Dashboard Router
-- **Layer 1** controller with 4 endpoints under prefix `/api/dashboard`.
-- Zero direct `knowledge_base` imports — delegates entirely to `services/dashboard_service.py`.
-- Chat endpoint calls `run_chat_pipeline_async()` which is already async-safe.
+1. **Stateless Graph Broker (`connection.py`):** Uses `SPARQLWrapper` over stateless HTTP requests (`SELECT`/`ASK` on the query endpoint, `INSERT DATA`/`DELETE` on the `/statements` endpoint) so there is zero socket pool exhaustion or driver lock contention.
+2. **Strict Namespace Enforcement (`lifting_service.py` & `repository.py`):** Every triple persisted into production enforces `PREFIX : <http://example.org/ontology#>`. Any legacy or temporary namespace (`http://www.semanticweb.org/supplychain#`) is blocked at the lifting boundary.
+3. **Named Graph Isolation:**
+   - **Ontology Axioms:** `<http://example.org/ontology/>`
+   - **Contract & Operational Triples:** `<http://example.org/contracts/>`
 
-### `services/llm_service.py` — LLM Infrastructure & SLA Extraction
-**Two layers of functionality:**
+### Automated Risk Propagation via OWL Reasoning
 
-**1. LLM Infrastructure (`LLMConfig` + `LLMClient` singleton):**
-- Thread-safe singleton with double-checked locking.
-- Configurable via environment variables (`LLM_API_KEY`, `LLM_BASE_URL`, `LLM_FALLBACK_ENABLED`, `OPENAI_API_KEY`).
-- `invoke_structured()` — calls LLM with `.with_structured_output(schema)` for guaranteed Pydantic output.
-- `invoke_text()` — calls LLM for free-text generation.
-- Both methods implement the resilience contract: try → retry (2x) → fallback (deterministic simulation).
-- Handles 429, quota, rate-limit, and resource-exhausted errors gracefully.
-- Falls back to `OPENAI_API_KEY` if `LLM_API_KEY` is not set.
+When an IoT delivery delay or under-shipment event is recorded, or when a supplier's reliability score degrades, GraphDB evaluates the ontology rules and operational status across connected entities:
 
-**2. SLA Extraction Pipeline:**
-- 3-node LangGraph: `[guardrail] → [extractor] → [validator]` with conditional retry loop.
-- Guardrail classifies document as VALID/INVALID SLA contract.
-- Extractor uses `with_structured_output(ExtractedSLAData)` to extract 9 fields.
-- Validator enforces 5 semantic business rules with self-correcting feedback.
-- Up to 3 retry iterations on validation failure.
+```
+(:Supplier) ──:supplies──► (:Material) ──:usedInProcess──► (:ProductionProcess / AssemblyLine)
+     │                          │                                       │
+:hasSLAContract          :hasSafetyStock /                        :producesProduct
+     ▼                   :currentInventory                              ▼
+(:SLAContract)                  │                                  (:Product)
+  • :hasLeadTimeDays            └──► Status Cascade:                    │
+  • :hasDelayPenaltyRate             🟢 GREEN (Healthy Buffer)          ├──► :isAtRisk true
+  • :hasMinQualityThreshold          🟡 YELLOW (Buffer Depleting)       └──► ManagerAlert
+                                     🔴 RED (Line Stoppage / Breach)
+```
 
-### `services/lifting_service.py` — Semantic Lifting
-- **Namespace Enforcement Boundary:** Every SPARQL statement MUST use `PREFIX : <http://example.org/ontology#>`. The data science team's temporary namespace is strictly forbidden.
-- `SemanticLifter` class — converts validated Pydantic models into SPARQL INSERT DATA statements.
-- `lift_extracted_data()` — builds a complete INSERT DATA query from `ExtractedSLAData` (supplier, material, contract, SLA properties).
-- `persist_confirmed_sla()` — HITL flow: maps `ConfirmedSLA` → `SLAContract` → delegates to `create_contract_graph()`.
-- `save_sla_contract()` — thin service wrapper for direct (non-HITL) persistence.
-- `execute_sparql_insert()` — executes a raw SPARQL INSERT string against GraphDB.
-- **Integer Day Rule:** `hours // 24` with a minimum floor of 1 day.
-- SPARQL injection safety via `_escape_sparql_literal()`.
+- **🟢 GREEN:** Delivery is on schedule and warehouse stock exceeds safety thresholds.
+- **🟡 YELLOW (Partial Fulfillment / Buffer Warning):** A delay or partial shipment occurred, but existing safety stock or a partial fallback order covers immediate assembly requirements while accruing SLA delay penalties.
+- **🔴 RED (Critical Disruption):** Net available stock falls below required production quantities or delay exceeds the SLA grace window, placing the downstream `:Product` and `:ProductionProcess` at immediate risk.
 
-### `services/risk_engine_service.py` — Multi-Agent Risk Engine
-- 3-node LangGraph: `[fetch_sla] → [analyze_risk] → [generate_alert]`.
-- Node 1: Queries GraphDB for SLA context (lead time, penalty rate). Falls back to mock data when GraphDB is unreachable.
-- Node 2: Risk Analyst Agent — calls LLM with `with_structured_output(RiskAnalysisResult)` combining IoT telemetry + SLA context.
-- Node 3: Alert Generator — routes the risk assessment to the correct manager role via `_determine_alert_title()`:
-  - `SLAViolation` → Procurement Manager
-  - `ProductionDisruption` → Logistics Manager
-  - `DelayEvent` → Production Manager
-- All nodes protected by resilient fallback — pipeline never crashes even without an LLM API key.
+---
 
-### `services/chat_service.py` — NL-to-SPARQL Chat Agent
-- 4-node LangGraph: `[guardrail] → [developer] → [database] → [customer_service]`.
-- Node 0: Domain Guardrail — rejects off-topic questions (cooking, politics, casual chat) with a polite message.
-- Node 1: SPARQL Developer — translates NL question to SPARQL SELECT using live GraphDB schema as context.
-- Node 2: Database Executor — runs SPARQL against GraphDB; on syntax error, feeds error back to developer for self-correction (up to 3 retries).
-- Node 3: Customer Service — translates raw JSON results to a concise human-readable answer.
-- Schema cache: `fetch_live_schema()` queries GraphDB once and caches the result.
+## 4. LangGraph Multi-Agent & NLP Extraction Pipelines
 
-### `services/dashboard_service.py` — Dashboard Data Access
-- **Layer 2** service that wraps `knowledge_base` repository functions for the dashboard API.
-- `get_risk_scores()` — calls `find_impacted_products_by_supplier_delay()` and formats results with RED/GREEN traffic-light status.
-- `get_compliance_alerts()` — builds a SPARQL SELECT query for all suppliers and their SLA terms.
-- `get_fallback_options(material_id)` — builds a ranked SPARQL query for alternative suppliers.
-- `get_impacted_products()` — returns raw inferred products (used by sandbox endpoint).
+### 4.1 Unstructured SLA Contract Extraction Pipeline (`services/llm_service.py` & `Data_Science/src/`)
 
-### `services/order_risk_service.py` — Purchase Order Delay Risk Assessment
-- **Layer 2** service that evaluates delay risks of proposed purchase orders before placement using static ML model assets.
-- Lazy-loads and caches ML artifacts (`delay_prediction_model.pkl`, `scaler.pkl`, and `model_features.json`).
-- Queries Ontotext GraphDB to fetch target supplier profile details (reliability tier, historic performance, ESG score) and material metrics.
-- Performs full 109-feature engineering on raw inputs, scaling features, and predicting on-time probability and risk status.
+Extracts structured contractual obligations from PDF, DOCX, or TXT agreements and converts them into RDF triples:
 
-### `services/supplier_evaluator_service.py` — Batch Supplier Reliability Evaluator
-- **Layer 2** service that updates supplier reliability scores dynamically based on historical transaction datasets (Excel/CSV sheets).
-- Maps suppliers to GraphDB nodes and updates their reliability metrics via custom SPARQL commands.
-- Calculates overall performance scores using a recency decay delay calculation, price variance calculations, and multi-criteria weighted aggregates.
-- Integrates both direct file uploads and automated CSV logging when placing new purchase orders.
+```
+Upload Contract (PDF/DOCX/TXT)
+       │
+       ▼
+┌──────────────┐   INVALID    ┌──────────────────────────────────────┐
+│ 1. Guardrail │─────────────►│ Reject with HTTP 400 (Non-SLA Doc)   │
+└──────┬───────┘              └──────────────────────────────────────┘
+       │ VALID
+       ▼
+┌──────────────┐              ┌──────────────────────────────────────┐
+│ 2. Extractor │─────────────►│ LLM .with_structured_output()        │
+└──────┬───────┘              │ Extracts 11 SLA & Material Fields    │
+       │                      └──────────────────┬───────────────────┘
+       │                                         ▼
+       │    Retry (≤ 3x with error feedback) ┌──────────────┐
+       └─────────────────────────────────────┤ 3. Validator │
+                                             └──────┬───────┘
+                                                    │ VALID
+                                                    ▼
+                                      ┌───────────────────────────┐
+                                      │ Side-by-Side Digital Twin │
+                                      │ Diff & HITL Confirmation  │
+                                      └─────────────┬─────────────┘
+                                                    │
+                                                    ▼
+                                      ┌───────────────────────────┐
+                                      │ SemanticLifter → SPARQL   │
+                                      │ INSERT DATA into GraphDB  │
+                                      └───────────────────────────┘
+```
 
-### `services/telemetry_simulator_service.py` — Background Telemetry Ingestion Loop
-- **Layer 2** background thread that automatically replays logistics telemetry stream records.
-- Reads GPS locations, route speeds, weather labels, cargo temperatures, and status codes from logistics data logs.
-- Employs a pre-trained logistics delay predictor model to dynamically estimate delay hours based on weather severity and speeds.
-- Constructs standardized `IoTTelemetryEvent` structures and streams them directly to the risk engine pipeline to create a live-updating dashboard.
+- **Semantic Business Rules Validated Automatically:**
+  1. `sla_lead_time_hours` must be positive and `< 8760` hours (1 year), converted via the **Integer Day Rule** (`max(1, hours // 24)`).
+  2. `minimum_quality_threshold` and `quality_penalty_rate` must be normalized decimals in `[0.0, 1.0]`.
+  3. `delay_penalty_rate` and `missed_item_penalty_rate` must be non-negative financial rates.
+  4. `supplier_id`, `supplier_name`, and `material` must be non-empty, sanitized identifiers.
+- **Auto-Assembly Line Matching:** Upon upload, `/api/sandbox/match-assembly-line` checks GraphDB to automatically pre-select the impacted manufacturing line for known raw materials.
 
-### `knowledge_base/connection.py` — GraphDB Connection Broker
-- **Golden Rule #1 — Stateless Connection:** SPARQLWrapper is stateless; each request is an independent HTTP call. No socket pool to manage, no session to close.
-- Reads `GRAPHDB_URL`, `GRAPHDB_REPO`, `GRAPHDB_USER`, `GRAPHDB_PASSWORD` from `.env`.
-- `execute_sparql_select()` — runs SELECT/ASK queries, returns list of dicts.
-- `execute_sparql_update()` — runs INSERT/DELETE updates via POST.
-- Module-level singleton `graphdb` shared across the entire application.
+### 4.2 Real-Time Event-Driven Risk Engine (`services/risk_engine_service.py`)
 
-### `knowledge_base/repository.py` — SPARQL Graph Repository
-- **Golden Rule #2 — Namespace Consistency:** Every triple uses `PREFIX : <http://example.org/ontology#>`.
-- **Golden Rule — Named Graph Separation:** Ontology axioms → `http://example.org/ontology/`, Contract data → `http://example.org/contracts/`.
-- `PREFIXES` — shared namespace block prepended to every SPARQL query.
-- `CONTRACT_GRAPH` — named graph URI for all contract triples.
-- `_sanitize_uri_fragment()` — converts human-readable names to safe URI fragments.
-- `create_contract_graph()` — builds and executes a SPARQL INSERT DATA for an SLA contract.
-- `find_impacted_products_by_supplier_delay()` — SPARQL SELECT that demonstrates OWL Inference (`:isAtRisk` inferred by reasoner).
+```
+IoT Telemetry Event ──► [ Node 1: fetch_sla ] ──► [ Node 2: analyze_risk ] ──► [ Node 3: generate_alert ]
+(Delay / Weather /       Queries GraphDB for       LLM Risk Analyst combines    Routes alert to:
+ Under-Shipment)         active SLA lead time,     telemetry + SLA terms →      • Procurement Manager
+                         penalty rates, stock      RiskAnalysisResult           • Logistics Manager
+                                                                                • Production Manager
+```
 
-### `models/schemas.py` — Pydantic Data Models
-Six strict Pydantic v2 models with field constraints, examples, and OpenAPI descriptions:
+### 4.3 Self-Correcting NL-to-SPARQL Chat Agent (`services/chat_service.py`)
 
-| Model | Fields | Purpose |
+```
+User Question ──► [ Node 0: Guardrail ] ──(Off-Topic)──► Polite Domain Refusal
+                         │
+                      (Valid)
+                         ▼
+                  [ Node 1: SPARQL Developer ] ◄──(Syntax / Execution Error, Retry ≤ 3x)──┐
+                         │                                                                │
+                         ▼                                                                │
+                  [ Node 2: GraphDB Executor ] ───────────────────────────────────────────┘
+                         │
+                     (Results)
+                         ▼
+                  [ Node 3: Customer Service ] ──► Concise Human-Readable Answer + Raw SPARQL
+```
+
+---
+
+## 5. Machine Learning Delay Prediction & Supplier Scoring
+
+The `Machine_Learning/` directory and corresponding backend services provide two production ML models and an automated supplier scoring engine:
+
+### 5.1 Pre-Order Procurement Delay Classifier (`Machine_Learning/Procurement_Model/` & `services/order_risk_service.py`)
+- **Algorithm:** `RandomForestClassifier(n_estimators=300, random_state=42, class_weight={0: 3, 1: 1})` with `StandardScaler`.
+- **Feature Space:** **109 engineered features** (`Backend/models/ml_assets/model_features.json`) combining live GraphDB supplier metadata (reliability score, ESG score, historical delay rate, contracted lead time) with order specifics (quantity, unit price, PO type, department, seasonal/temporal encodings, and one-hot supplier/material encodings).
+- **Output:** Predicts `on_time_probability` (`0.0–1.0`), classifies risk into `Low`, `Medium`, or `High`, estimates expected delay hours, and returns an explainability dictionary (`features_used`).
+
+### 5.2 Real-Time Logistics Transit Delay Predictor (`Machine_Learning/Logistics_Model/` & `services/telemetry_simulator_service.py`)
+- **Pipeline:** `ColumnTransformer` + `StandardScaler` + `SimpleImputer` regression pipeline (`delay_predictor_logistics.py` & `transit_delay_predictor.py`).
+- **Live Telemetry Stream:** `telemetry_simulator_service.py` runs as a managed FastAPI background daemon (configurable via `TELEMETRY_INTERVAL_SECONDS`, default `30s`), reading GPS coordinates, vehicle speed, weather conditions, and traffic status to predict transit delay hours dynamically and push events through the Risk Engine.
+
+### 5.3 Recency-Decay Supplier Reliability Evaluator (`services/supplier_evaluator_service.py`)
+- Evaluates historical and newly placed purchase orders using an exponential recency-decay weight (`exp(-lambda * age)`), combining on-time delivery performance, quantity fulfillment accuracy, and price variance into an updated `:hasReliabilityScore` persisted directly in GraphDB.
+
+---
+
+## 6. React Frontend & Role-Based Control Tower
+
+Located in `Frontend/my-app/`, the React 19 user interface provides a real-time operational control tower with **Role-Based Access Control (RBAC)**:
+
+| Role | Primary Focus & Filtered KPIs |
+|---|---|
+| **Procurement Manager** | SLA contract uploads, side-by-side Digital Twin SLA diffing, supplier compliance violations, financial penalty tracking, fallback supplier assignment, pre-order ML risk prediction |
+| **Logistics Manager** | Real-time IoT shipment delay alerts, transit disruption probabilities, route/weather delay diagnostics |
+| **Production Manager** | Assembly line health (`GREEN` / `YELLOW` / `RED`), raw material inventory buffers, safety stock alerts, urgent fallback requests |
+| **Admin** | Unfiltered executive view across all KPIs, suppliers, inventory risks, and system alerts |
+
+### Key Application Pages (`Frontend/my-app/src/pages/`)
+- **`Dashboard.jsx`**: Role-tailored KPI cards, supplier reliability charts, SLA violations table, and live risk panels.
+- **`SLAUpload.jsx`**: Multi-format contract upload (PDF/DOCX/TXT), LLM extraction review, auto-matched assembly line selector, and **Live Digital Twin SLA Comparison** against existing active contracts in GraphDB.
+- **`InventoryRisk.jsx`**: Material-level stock monitoring, `RED`/`YELLOW`/`GREEN` status indicators, assembly line mapping, and one-click backup supplier switching.
+- **`Suppliers.jsx`**: Supplier reliability scorecards, historical transaction batch upload, and PO placement with live ML delay risk preview.
+- **`SLAViolations.jsx` & `Alerts.jsx`**: Real-time feed of multi-agent alerts with read/dismiss lifecycle management and penalty calculations.
+- **`ChatAssistant.jsx`**: Interactive NL-to-SPARQL chat interface with query inspection.
+
+---
+
+## 7. REST API Reference
+
+When the backend is running, interactive Swagger UI documentation is available at **`http://localhost:8001/docs`** (and ReDoc at **`http://localhost:8001/redoc`**).
+
+### 7.1 Sandbox & Ingestion Router (`/api/sandbox`)
+
+| Method | Endpoint | Description |
 |---|---|---|
-| `SLAContract` | 4 fields | Core domain model for SLA contracts |
-| `ExtractedSLAData` | 9 fields | Raw LLM extraction output before human review |
-| `ConfirmedSLA` | 6 fields | Human-reviewed and corrected SLA (HITL gate) |
-| `RiskAnalysisResult` | 5 fields | Structured LLM risk assessment output |
-| `IoTTelemetryEvent` | 5 fields | Incoming IoT event that triggers the risk engine |
-| `ManagerAlert` | 3 fields | Final alert targeted at a specific manager role |
+| `POST` | `/api/sandbox/upload-pdf` | Upload a PDF/DOCX/TXT contract → run 3-node LangGraph extraction → return `ExtractedSLAData` & mapped SLA for HITL review |
+| `POST` | `/api/sandbox/confirm-sla` | Confirm human-reviewed SLA (`ConfirmedSLA`) → lift to RDF triples and persist in GraphDB |
+| `POST` | `/api/sandbox/upload-sla` | Directly persist a structured `SLAContract` payload into GraphDB |
+| `GET` | `/api/sandbox/match-assembly-line` | Auto-detect and return the linked production assembly line for a given material |
+| `POST` | `/api/sandbox/simulate-iot` | Inject an `IoTTelemetryEvent` into the LangGraph Risk Engine and return a `ManagerAlert` |
+| `POST` | `/api/sandbox/predict-order-risk` | Run the 109-feature Random Forest model to predict PO delay probability before order placement |
+| `POST` | `/api/sandbox/place-order` | Place a purchase order, log the transaction, and trigger supplier reliability score updates |
+| `POST` | `/api/sandbox/upload-transactions` | Upload an Excel/CSV procurement log to batch-recalculate supplier reliability scores in GraphDB |
+| `POST` | `/api/sandbox/migrate-supplier-scores` | Initialize default reliability scores (`0.75`) for any suppliers missing a score in GraphDB |
+| `GET` | `/api/sandbox/impacted-products` | Query OWL-inferred at-risk products and assembly lines from GraphDB |
+
+### 7.2 Control Tower Dashboard Router (`/api/dashboard`)
+
+| Method | Endpoint | Description |
+|---|---|---|
+| `GET` | `/api/dashboard/kpis` | Retrieve role-filtered executive KPIs (`?role=Procurement\|Logistics\|Production\|Admin`) |
+| `GET` | `/api/dashboard/risk-scores` | Fetch all products and materials with `RED` / `YELLOW` / `GREEN` risk status and stock metrics |
+| `GET` | `/api/dashboard/compliance-alerts` | Fetch active SLA contracts, lead times, grace periods, and compliance metrics |
+| `GET` | `/api/dashboard/active-sla` | Retrieve the currently active SLA in GraphDB for side-by-side comparison during contract upload |
+| `GET` | `/api/dashboard/fallback-options/{material_id}` | List ranked alternative/backup suppliers for a specific raw material |
+| `POST` | `/api/dashboard/assign-fallback` | Switch a material's active supplier (or fulfill partial shortage) using a backup supplier |
+| `POST` | `/api/dashboard/request-fallback` | Trigger a high-priority procurement alert requesting fallback sourcing for an at-risk material |
+| `GET` | `/api/dashboard/assembly-lines` | List all manufacturing assembly lines / production processes in the ontology |
+| `POST` | `/api/dashboard/assign-material-process` | Link a raw material to a specific assembly line in GraphDB |
+| `GET` | `/api/dashboard/alerts` | Retrieve active role-targeted manager alerts generated by the Risk Engine |
+| `POST` | `/api/dashboard/alerts/mark-read` | Mark a specific alert as `READ` |
+| `POST` | `/api/dashboard/alerts/dismiss` | Dismiss an alert (`DISMISSED`) |
+| `POST` | `/api/dashboard/chat` | Execute the 4-node NL-to-SPARQL conversational agent and return the answer + generated SPARQL |
 
 ---
 
-## 4. Core Features (LangGraph & ML Pipelines)
+## 8. Data Models & Schemas
 
-### 4.1 PDF SLA Extraction with Guardrails (`services/llm_service.py`)
+Defined in [`Backend/models/schemas.py`](Backend/models/schemas.py) using **Pydantic v2**:
 
-```
-Upload PDF → [guardrail] ──INVALID──→ END (400 response)
-                │
-                └──VALID──→ [extractor] → [validator]
-                                    ↑            │
-                                    └──(error, retry<3)──┘
-                                              │
-                                         (success / max retries)
-                                              │
-                                              ↓
-                                          Return ExtractedSLAData
-```
-
-- Guardrail classifies document as valid SLA or rejects with 400 error.
-- Extractor calls LLM with `with_structured_output(ExtractedSLAData)` to extract 9 fields.
-- Validator enforces 5 semantic rules: positive lead time (< 1 year), decimal thresholds (0.0–1.0), non-negative penalties, non-empty identifiers.
-- If validation fails, the error message is injected into the re-prompt and the pipeline retries (up to 3 iterations).
-- If LLM is unreachable, deterministic simulation response is returned.
-
-### 4.2 Human-in-the-Loop Validation & Knowledge Graph Ingestion (`services/lifting_service.py`)
-
-```
-PDF Upload → LLM Extraction → Human Review → Confirm SLA → GraphDB
-  [Frontend/API]    [Backend]      [Frontend]     [API]      [SPARQL]
-```
-
-- Extracted data is presented to a procurement manager for review.
-- Manager can edit any field and submit the corrected payload.
-- `persist_confirmed_sla()` maps `ConfirmedSLA` → `SLAContract` → calls `create_contract_graph()`.
-- All triples use the strict ontology namespace `PREFIX : <http://example.org/ontology#>`.
-- The data science team's temporary namespace is **strictly forbidden** at this boundary.
-
-### 4.3 Event-Driven Risk Engine (`services/risk_engine_service.py`)
-
-```
-IoT Telemetry → [fetch_sla] → [analyze_risk] → [generate_alert] → ManagerAlert
-```
-
-- **Node 1 — SLA Context Fetcher:** Queries GraphDB for `lead_time_days` and `delay_penalty_rate` for the delivery's supplier. Falls back to deterministic mock data when GraphDB is unreachable, enabling full end-to-end testing without a running database.
-- **Node 2 — Risk Analyst Agent:** Combines IoT telemetry (delay hours, reason code, disruption probability) with SLA context (lead time, penalty rate). Calls LLM with `with_structured_output(RiskAnalysisResult)`. Falls back to conservative defaults on API failure.
-- **Node 3 — Alert Generator:** Routes the risk assessment to the correct manager role using the `_determine_alert_title()` logic based on risk types detected.
-
-### 4.4 NL-to-SPARQL Chat Agent (`services/chat_service.py`)
-
-```
-Question → [guardrail] ──off-topic──→ [customer_service] → "I can only answer..."
-               │
-               └──valid──→ [developer] → [database] → [customer_service] → Answer
-                                 ↑            │
-                                 └──(error, retry<3)──┘
-```
-
-- **Node 0 — Domain Guardrail:** Classifies the question as supply-chain related or off-topic. Off-topic questions receive a polite out-of-domain message.
-- **Node 1 — SPARQL Developer:** Translates NL into SPARQL SELECT using the live GraphDB schema as context. Follows 8 strict rules (multi-hop reasoning, URI handling, optional blocks, minimal queries).
-- **Node 2 — Database Executor:** Runs the generated SPARQL against GraphDB. On syntax error, feeds the error back to the developer node for up to 3 self-correction attempts.
-- **Node 3 — Customer Service:** Translates raw JSON results into a concise, complete human-readable answer. Lists every entity without summarization.
-
-### 4.5 Purchase Order Delay Risk Assessment (ML Classification)
-
-Proposed purchase orders are evaluated through a Scikit-Learn Random Forest Classifier that predicts delay risks during planning.
-1. The API receives order details (`supplier_id`, `material_id`, `quantity`, `unit_price`, `po_type`, etc.).
-2. The service queries Ontotext GraphDB to fetch target supplier characteristics (historical performance, reliability tier, ESG score) and contractual parameters (lead times, payment terms).
-3. The system maps the inputs to a 109-feature engineering dataset, scaling features with a pre-trained `scaler.pkl`.
-4. It predicts the on-time probability and flags high-risk orders, estimating the delay duration in hours to support procurement planning.
-
-### 4.6 Real-Time Telemetry Replay & ML Logistics Regressor
-
-To simulate active operations, the background replay simulator processes GPS coordinates, speeds, weather states, and temperatures from a logistics dataset.
-1. Each telemetry record's speed, weather, and status are translated into predictive inputs.
-2. A pre-trained logistics regression model predicts the estimated delay hours in real-time.
-3. If an SLA breach is predicted, the event is immediately pushed to the risk engine pipeline to trigger manager alerts.
-
-### 4.7 Live Digital Twin SLA Comparison
-
-When a new SLA contract is uploaded or extracted, the frontend compares the proposed metrics side-by-side with the current contract active in GraphDB:
-1. Queries the database using `GET /api/dashboard/active-sla` for the supplier-material combination.
-2. Displays contractual terms side-by-side (lead times, unit costs, quantities, penalty rates).
-3. Evaluates changes to help procurement managers easily validate modifications before pushing them to the knowledge graph.
-
-### 4.8 Role-Based Access Control (RBAC) Alert Routing
-
-The dashboard dynamically adjusts alerts and KPIs depending on the logged-in manager's role:
-- **Procurement Manager**: Monitors supplier compliance, SLA terms, and financial penalties (such as under-shipment issues).
-- **Logistics Manager**: Tracks raw material delays, shipping status, and transportation disruptions.
-- **Production Manager**: Manages assembly line statuses, safety stock levels, and production process disruptions.
-- **Admin**: Views aggregated, unfiltered metrics across all components.
+| Schema | Key Fields | Role in Pipeline |
+|---|---|---|
+| `ExtractedSLAData` | `document_id`, `supplier_id`, `supplier_name`, `material`, `sla_lead_time_hours`, `delay_penalty_rate`, `missed_item_penalty_rate`, `minimum_quality_threshold`, `quality_penalty_rate`, `quantity`, `unit_cost` | Structured output schema enforced on the LLM extractor node |
+| `ConfirmedSLA` | `extraction_id`, `supplier_name`, `material`, `lead_time_days`, `penalty_clause`, `quantity`, `unit_cost`, `impacted_process`, `is_fallback`, penalty & quality rates | Human-in-the-Loop validated payload submitted from the UI |
+| `SLAContract` | `supplier_name`, `material`, `lead_time_days`, `penalty_clause`, `quantity`, `unit_cost`, `impacted_process`, `is_fallback`, rate fields | Canonical domain model passed to `SemanticLifter` for RDF generation |
+| `IoTTelemetryEvent` | `delivery_id`, `estimated_delay_hours`, `reason_code`, `disruption_probability`, `timestamp`, `quantity` | Real-time logistics event consumed by the LangGraph Risk Engine |
+| `RiskAnalysisResult` | `risks`, `confidence`, `severity`, `financial_penalty_estimate`, `reasoning` | Structured LLM risk assessment output |
+| `ManagerAlert` | `manager_title`, `alert_text`, `validated` | Role-routed operational alert persisted to GraphDB |
+| `OrderRiskPredictionRequest` | `supplier_id`, `material_id`, `quantity`, `unit_price`, `po_date`, `po_type`, `department` | Input payload for pre-order ML delay risk evaluation |
+| `OrderRiskPredictionResponse` | `status`, `on_time_probability`, `risk_level`, `estimated_delay_hours`, `features_used` | ML prediction output with feature explainability |
 
 ---
 
-## 5. API Endpoints
+## 9. Resilience & Deterministic Fallback Strategy
 
-All endpoints return JSON. Invalid payloads receive automatic `422` responses from Pydantic validation.
+The backend is engineered for **zero-downtime operation** even when external LLM APIs hit rate limits (`HTTP 429`) or when running in an offline evaluation environment:
 
-### Sandbox (`/api/sandbox`)
+1. **Thread-Safe `LLMClient` Singleton (`services/llm_service.py`):**
+   - Uses double-checked locking to initialize the LLM client once.
+   - Supports any OpenAI-compatible or Gemini endpoint via `LLM_API_KEY` / `LLM_BASE_URL` / `OPENAI_API_KEY` / `OPENROUTER_API_KEY`.
+2. **3-Stage Call Resilience (`Primary → 2x Retry → Deterministic Fallback`):**
+   - If `LLM_FALLBACK_ENABLED=true` (default), quota exhaustion or missing API keys automatically degrade gracefully to deterministic domain-accurate simulation outputs for `ExtractedSLAData`, `RiskAnalysisResult`, and NL-to-SPARQL responses.
+3. **GraphDB Mock Fallback:**
+   - If GraphDB is unreachable during standalone sandbox testing, `risk_engine_service.py` falls back to baseline SLA parameters so agent pipelines remain testable end-to-end.
 
-| Method | Path | Description | Request Body | Response |
-|---|---|---|---|---|
-| `POST` | `/api/sandbox/upload-sla` | Directly persist an SLA contract as RDF triples in GraphDB | `SLAContract` JSON | `{"status", "message", "graph_data"}` |
-| `GET` | `/api/sandbox/match-assembly-line` | Check if a material already has a linked assembly line in GraphDB | — | `{"matched", "process"}` |
-| `POST` | `/api/sandbox/upload-transactions` | Parse Excel/CSV procurement sheet and batch-update reliability scores | `multipart/form-data` file | `{"status", "message", "details"}` |
-| `GET` | `/api/sandbox/impacted-products` | Query OWL-inferred at-risk products from the knowledge graph | — | `{"status", "count", "impacted_products"}` |
-| `POST` | `/api/sandbox/upload-pdf` | Upload a PDF contract → LLM extraction → return structured JSON for human review | `multipart/form-data` file | `{"status", "extraction_id", "extracted_data", "mapped_sla", "raw_text"}` |
-| `POST` | `/api/sandbox/confirm-sla` | Human-in-the-loop confirmation → persist triples to GraphDB | `ConfirmedSLA` JSON | `{"status", "extraction_id", "supplier", "material", "graph", "triples_inserted"}` |
-| `POST` | `/api/sandbox/simulate-iot` | Inject an IoT telemetry event → risk engine → return a ManagerAlert | `IoTTelemetryEvent` JSON | `ManagerAlert` JSON |
-| `POST` | `/api/sandbox/predict-order-risk` | Predict PO delay risk before placement using pre-trained ML classifier | `OrderRiskPredictionRequest` | `OrderRiskPredictionResponse` |
-| `POST` | `/api/sandbox/place-order` | Place PO, log to historical database, and update supplier scores | `OrderRiskPredictionRequest` | `{"status", "message", "delivery_id"}` |
-| `POST` | `/api/sandbox/migrate-supplier-scores` | Set default reliability scores (0.75) for suppliers lacking them | — | `{"status", "message", "updated_count"}` |
+---
 
-### Dashboard (`/api/dashboard`)
+## 10. Monorepo Folder Structure
 
-| Method | Path | Description | Request Body | Response |
-|---|---|---|---|---|
-| `GET` | `/api/dashboard/risk-scores` | OWL-inferred at-risk products with RED/GREEN traffic-light status | — | `{"status", "count", "risk_scores"}` |
-| `GET` | `/api/dashboard/compliance-alerts` | All suppliers and their SLA terms from GraphDB | — | `{"status", "count", "alerts"}` |
-| `GET` | `/api/dashboard/fallback-options/{material_id}` | Alternative suppliers for a material, ranked by reliability score | — | `{"status", "count", "material", "suppliers"}` |
-| `GET` | `/api/dashboard/active-sla` | Fetch existing active SLA details for comparison on PDF upload | — | `{"status", "exists", "sla"}` |
-| `POST` | `/api/dashboard/assign-fallback` | Assign alternative supplier to replace at-risk primary supplier | `FallbackAssignmentRequest` | `{"status", "message"}` |
-| `GET` | `/api/dashboard/kpis` | Retrieve high-level KPIs, optionally filtered by user role | — | `{"status", "kpis"}` |
-| `GET` | `/api/dashboard/alerts` | List all active ML-generated system alerts | — | `{"status", "count", "alerts"}` |
-| `GET` | `/api/dashboard/assembly-lines` | List all active production process names from the knowledge graph | — | `{"status", "assembly_lines"}` |
-| `POST` | `/api/dashboard/assign-material-process` | Assign a material to an assembly line and dismiss alert | `AssignMaterialRequest` | `{"status", "message"}` |
-| `POST` | `/api/dashboard/request-fallback` | Generate an urgent fallback request alert for a material | `FallbackRequest` | `{"status", "alert_id", "severity", "risk_percent"}` |
-| `POST` | `/api/dashboard/alerts/mark-read` | Mark a specific system alert's status as READ | `AlertStatusUpdate` | `{"status", "message"}` |
-| `POST` | `/api/dashboard/alerts/dismiss` | Mark a specific system alert's status as DISMISSED | `AlertStatusUpdate` | `{"status", "message"}` |
-| `POST` | `/api/dashboard/chat` | Natural-language supply-chain question → SPARQL → human-readable answer | `{"question", "chat_history"}` | `{"status", "answer", "sparql", "results", "topic_accepted"}` |
-
-### Example: `POST /api/sandbox/simulate-iot`
-
-```bash
-curl -X POST http://localhost:8001/api/sandbox/simulate-iot \
-  -H "Content-Type: application/json" \
-  -d '{
-    "delivery_id": "DEL_001",
-    "estimated_delay_hours": 48,
-    "reason_code": "Weather_Delay",
-    "disruption_probability": 0.9,
-    "timestamp": "2026-03-05T15:30:00Z"
-  }'
-```
-
-**Response (200):**
-```json
-{
-  "manager_title": "Production Manager",
-  "alert_text": "Delivery DEL_001 is at risk. Delay: 48h (Weather_Delay). SLA lead time: 3 day(s). Severity: High. Risks detected: DelayEvent, SLAViolation. Estimated penalty: $12,500.00. Reasoning: 48h delay exceeds 72h SLA lead time. Inventory below safety stock.",
-  "validated": false
-}
-```
-
-### Example: `POST /api/dashboard/chat`
-
-```bash
-curl -X POST http://localhost:8001/api/dashboard/chat \
-  -H "Content-Type: application/json" \
-  -d '{"question": "What materials does Supplier 001 supply?"}'
-```
-
-**Response (200):**
-```json
-{
-  "status": "success",
-  "answer": "Supplier 001 supplies Titanium and Steel Coil.",
-  "sparql": "PREFIX : <http://example.org/ontology#> ...",
-  "results": [...],
-  "topic_accepted": true
-}
+```text
+semantic-digital-twin-backend/
+├── LICENSE                                         # MIT License
+├── README.md                                       # Comprehensive monorepo documentation
+├── .gitignore                                      # Excludes .env, venv, .pkl binaries, raw CSV/XLSX lakes
+│
+├── Backend/                                        # FastAPI + LangGraph 3-Tier Backend
+│   ├── main.py                                     # FastAPI entrypoint, CORS, telemetry lifecycle hooks
+│   ├── requirements.txt                            # Pinned Python 3.12 dependencies
+│   ├── api/                                        # Layer 1: HTTP Controllers (zero SPARQL/business logic)
+│   │   ├── dashboard.py                            # 13 Control Tower & NL-to-SPARQL endpoints
+│   │   └── sandbox.py                              # 10 SLA ingestion, HITL, IoT & ML prediction endpoints
+│   ├── services/                                   # Layer 2: LangGraph Agents, ML Inference & Domain Logic
+│   │   ├── llm_service.py                          # LLMClient singleton + 3-node SLA Extraction LangGraph
+│   │   ├── lifting_service.py                      # SemanticLifter (Pydantic → RDF/SPARQL INSERT DATA)
+│   │   ├── risk_engine_service.py                  # 3-node IoT Risk Engine & ManagerAlert router
+│   │   ├── chat_service.py                         # 4-node self-correcting NL-to-SPARQL agent
+│   │   ├── dashboard_service.py                    # SPARQL query wrappers, RBAC KPIs, fallback logic
+│   │   ├── order_risk_service.py                   # 109-feature Random Forest PO delay risk predictor
+│   │   ├── supplier_evaluator_service.py           # Recency-decay supplier reliability score calculator
+│   │   └── telemetry_simulator_service.py          # Background IoT telemetry streamer + logistics ML model
+│   ├── knowledge_base/                             # Layer 3: Ontotext GraphDB Data Access Layer
+│   │   ├── connection.py                           # Stateless SPARQLWrapper singleton broker
+│   │   └── repository.py                           # Named graphs, prefix enforcement, OWL inference queries
+│   ├── models/                                     # Pydantic Schemas & ML Feature Definitions
+│   │   ├── schemas.py                              # Strict Pydantic v2 request/response models
+│   │   └── ml_assets/                              # Feature schema definitions for procurement & logistics ML
+│   │       ├── model_features.json                 # 109-feature specification for PO delay classifier
+│   │       └── logistics_model_features.json       # Feature specification for transit delay predictor
+│   ├── scripts/                                    # Operational, Seeding, Simulation & Training Scripts
+│   │   ├── generate_telemetry_stream.py            # Generates synthetic IoT logistics telemetry streams
+│   │   ├── train_logistics_model.py                # Trains and serializes the logistics delay model
+│   │   ├── inject_products.py                      # Seeds products and assembly line mappings into GraphDB
+│   │   ├── inject_test_delay.py                    # Injects test delay scenarios (RED / YELLOW states)
+│   │   ├── link_alt_supplier.py                    # Links backup suppliers to raw materials in GraphDB
+│   │   ├── verify_model_loaded.py                  # Verifies ML model artifacts and feature alignment
+│   │   └── verify_sla_rule.py                      # Verifies OWL SLA inference rules in GraphDB
+│   ├── tests/                                      # Automated Unit, Integration & E2E Test Suites (11 suites)
+│   │   ├── test_integration.py                     # 70-assertion core architecture & pipeline test suite
+│   │   ├── test_graphdb_connection.py              # Live GraphDB triple insertion & OWL inference tests
+│   │   ├── test_order_risk.py                      # Procurement ML classifier & 109-feature tests
+│   │   ├── test_ml_backend_integration.py          # End-to-end ML + GraphDB integration tests
+│   │   ├── test_supplierScore_updates.py           # Recency-decay supplier scoring tests
+│   │   ├── test_fallback_e2e.py                    # Backup supplier switching & partial fulfillment E2E tests
+│   │   ├── test_risk_scores.py                     # RED / YELLOW / GREEN status computation tests
+│   │   └── test_chat_fallback.py                   # NL-to-SPARQL chat resilience tests
+│   └── docs/
+│       └── How to run.txt                          # Quick-reference startup guide
+│
+├── Data_Science/                                   # Ontology Engineering, Sample SLAs & Agent Prototypes
+│   ├── ontology/
+│   │   ├── Semantic Digital Twin Project.rdf       # Base OWL 2 supply chain ontology
+│   │   ├── Semantic Digital Twin Project Inferred.rdf # Materialized OWL 2 inferred ontology graph
+│   │   └── catalog-v001.xml                        # Protégé XML ontology catalog
+│   ├── contracts/                                  # Sample Primary & Backup Supplier Contracts (PDF/DOCX/TXT)
+│   │   ├── Acme Materials SLA.txt
+│   │   ├── Acme_Doc.docx
+│   │   ├── Acme_Test.pdf
+│   │   ├── Apex_Motor_Backup.txt
+│   │   ├── Aura_Steel_Backup.txt
+│   │   ├── SLA_Global_Chemicals_Co.txt
+│   │   ├── Steel_Supply_Backup.txt
+│   │   └── TechChem European Supply Agreement.txt
+│   └── src/                                        # Standalone Data Science Agent Modules
+│       ├── SLA Extractor (Tool Use) v3.py          # Standalone LangGraph SLA extraction prototype
+│       ├── impact_mitigation_agents_v3.py          # Standalone multi-agent impact mitigation prototype
+│       ├── chat_v2.py                              # Standalone NL-to-SPARQL conversational agent
+│       └── data_loader.py                          # Ontology and RDF bulk data loader
+│
+├── Machine_Learning/                               # Model Training Notebooks & Standalone Predictors
+│   ├── Procurement_Model/
+│   │   ├── Graduation_Project_final.ipynb          # Procurement delay classifier training notebook
+│   │   ├── Supplier_Score.ipynb                    # Supplier reliability scoring research notebook
+│   │   ├── procurement_delay_predictor.py          # RandomForestClassifier training & inference module
+│   │   ├── seed_procurement_evaluation.py          # GraphDB evaluation context seeder for procurement
+│   │   └── model_features.json                     # 109 engineered procurement features
+│   └── Logistics_Model/
+│       ├── Delay_orediction.ipynb                  # Logistics transit delay research notebook
+│       ├── delay_predictor_logistics.py            # Transit delay pipeline training script
+│       ├── transit_delay_predictor.py              # Real-time transit delay inference module
+│       ├── seed_evaluation_context.py              # Logistics evaluation context seeder
+│       └── logistics_features.json                 # Logistics model feature specification
+│
+└── Frontend/                                       # React 19 Supply Chain Control Tower
+    ├── package.json                                # Root wrapper scripts (start, build, test, install)
+    └── my-app/                                     # React application workspace
+        ├── package.json                            # React 19.2 dependencies
+        ├── public/                                 # Static assets
+        └── src/
+            ├── App.js                              # Application router & RBAC state provider
+            ├── auth/roles.js                       # Role definitions (Procurement, Logistics, Production, Admin)
+            ├── components/
+            │   ├── dashboard/                      # KPISection, ReliabilityChart, RiskPanel, SLAViolationsTable
+            │   └── layout/                         # Layout, Sidebar, Topbar (with role switcher & alert bell)
+            ├── pages/                              # Dashboard, SLAUpload, SLAViolations, InventoryRisk,
+            │                                       # Suppliers, Alerts, ChatAssistant, Login
+            ├── services/api.js                     # REST API client connecting to FastAPI (Port 8001)
+            └── styles/                             # Theme tokens & dashboard CSS
 ```
 
 ---
 
-## 6. Data Models
-
-All models defined in `models/schemas.py` using Pydantic v2 with strict validation, examples, and OpenAPI descriptions.
-
-### SLAContract
-
-| Field | Type | Constraints | Description |
-|---|---|---|---|
-| `supplier_name` | `str` | min_length=1 | Name of the raw-material supplier |
-| `material` | `str` | min_length=1 | Raw material covered by this SLA |
-| `lead_time_days` | `int` | gt=0 | Delivery lead time in days |
-| `penalty_clause` | `str` | min_length=1 | Penalty clause description |
-| `quantity` | `int` | ge=0 | Standard order quantity covered under SLA |
-| `unit_cost` | `float` | ge=0.0 | Unit cost of the material |
-| `impacted_process` | `str \| None` | optional | Production process or assembly line impacted by this material |
-| `is_fallback` | `bool` | default False | Whether this contract is for a backup/alternative supplier |
-| `delay_penalty_rate` | `float \| None` | ge=0.0 | Daily delay penalty rate |
-| `missed_item_penalty_rate` | `float \| None` | ge=0.0 | Penalty rate per missed/short-shipped item |
-| `min_quality_threshold` | `float \| None` | 0.0–1.0 | Minimum acceptable quality threshold (decimal) |
-| `quality_penalty_rate` | `float \| None` | 0.0–1.0 | Quality penalty rate as a decimal |
-
-### ExtractedSLAData
-
-| Field | Type | Constraints | Description |
-|---|---|---|---|
-| `document_id` | `str` | auto-generated UUID | Unique extraction trace ID |
-| `supplier_id` | `str` | min_length=1 | Supplier/vendor identifier |
-| `supplier_name` | `str` | min_length=1 | Human-readable supplier name |
-| `material` | `str` | min_length=1 | Raw material name |
-| `sla_lead_time_hours` | `int` | gt=0 | Lead time in hours |
-| `delay_penalty_rate` | `float` | ge=0.0 | Penalty for delayed delivery |
-| `missed_item_penalty_rate` | `float` | ge=0.0 | Penalty for short-shipments |
-| `minimum_quality_threshold` | `float` | 0.0–1.0 | Minimum yield (decimal) |
-| `quality_penalty_rate` | `float` | 0.0–1.0 | Sub-quality penalty (decimal) |
-| `quantity` | `int` | ge=0, default 0 | Standard order quantity or quantity covered under SLA |
-| `unit_cost` | `float` | ge=0.0, default 0.0 | Unit cost of the material |
-
-### ConfirmedSLA
-
-| Field | Type | Constraints | Description |
-|---|---|---|---|
-| `extraction_id` | `str` | required | Links back to the LLM extraction trace |
-| `supplier_name` | `str` | min_length=1 | Human-verified supplier name |
-| `material` | `str` | min_length=1 | Human-verified material name |
-| `lead_time_days` | `int` | gt=0 | Delivery lead time in days |
-| `penalty_clause` | `str` | min_length=1 | Human-edited penalty description |
-| `corrections` | `str \| None` | optional | Reviewer notes about corrections |
-| `quantity` | `int` | ge=0 | Standard order quantity or quantity covered under SLA |
-| `unit_cost` | `float` | ge=0.0 | Unit cost of the material |
-| `impacted_process` | `str \| None` | optional | Production process or assembly line impacted by this material |
-| `is_fallback` | `bool` | default False | Whether this contract is for a backup/alternative supplier |
-| `delay_penalty_rate` | `float \| None` | ge=0.0 | Daily delay penalty rate |
-| `missed_item_penalty_rate` | `float \| None` | ge=0.0 | Penalty rate per missed/short-shipped item |
-| `min_quality_threshold` | `float \| None` | 0.0–1.0 | Minimum acceptable quality threshold (decimal) |
-| `quality_penalty_rate` | `float \| None` | 0.0–1.0 | Quality penalty rate as a decimal |
-
-### RiskAnalysisResult
-
-| Field | Type | Constraints | Description |
-|---|---|---|---|
-| `risks` | `list[str]` | required | Active risk types (e.g., DelayEvent, SLAViolation) |
-| `confidence` | `float` | 0.0–1.0 | Confidence score of the analysis |
-| `severity` | `str` | required | Low, Medium, High, or Critical |
-| `financial_penalty_estimate` | `float` | ge=0.0 | Estimated penalty amount in USD |
-| `reasoning` | `str` | required | Human-readable explanation from the LLM |
-
-### IoTTelemetryEvent
-
-| Field | Type | Constraints | Description |
-|---|---|---|---|
-| `delivery_id` | `str` | min_length=1 | Unique delivery/shipment identifier |
-| `estimated_delay_hours` | `int` | ge=0 | ML-predicted or IoT-reported delay in hours |
-| `reason_code` | `str` | required | Machine-readable delay reason code |
-| `disruption_probability` | `float` | 0.0–1.0 | Probability of production disruption |
-| `timestamp` | `str` | required | ISO 8601 timestamp |
-| `quantity` | `int` | ge=0, default 0 | Number of units in this delivery shipment |
-
-### ManagerAlert
-
-| Field | Type | Constraints | Description |
-|---|---|---|---|
-| `manager_title` | `str` | required | Production Manager, Procurement Manager, or Logistics Manager |
-| `alert_text` | `str` | min_length=1 | Alert message body from the multi-agent pipeline |
-| `validated` | `bool` | default False | Whether the alert passed the validator quality gate |
-
-### OrderRiskPredictionRequest
-
-| Field | Type | Constraints | Description |
-|---|---|---|---|
-| `supplier_id` | `str` | required | Unique identifier (URI or ID) of the supplier in GraphDB |
-| `material_id` | `str` | required | Unique identifier (URI or ID) of the raw material in GraphDB |
-| `quantity` | `int` | ge=1 | Proposed order quantity |
-| `unit_price` | `float` | ge=0.0 | Proposed unit price |
-| `po_date` | `str` | required | Proposed purchase order date (YYYY-MM-DD) |
-| `po_type` | `str` | default "Standard" | Type of purchase order (Standard, Emergency) |
-| `department` | `str` | default "Operations" | Department requesting the order |
-
-### OrderRiskPredictionResponse
-
-| Field | Type | Constraints | Description |
-|---|---|---|---|
-| `status` | `str` | default "success" | Evaluation status |
-| `on_time_probability` | `float` | 0.0–1.0 | Model-predicted probability that the order will arrive on time |
-| `risk_level` | `str` | required | Calculated risk classification level based on probability threshold |
-| `estimated_delay_hours` | `int` | ge=0 | Estimated delay duration in hours if flagged as high-risk |
-| `features_used` | `dict` | required | Explainability dictionary showing parameters retrieved from GraphDB |
-
----
-
-## 7. Resilience & Fallback Strategy
-
-The system is designed to work **without any external API keys** in fallback simulation mode.
-
-### LLM Fallback Chain
-
-```
-LLM Call → Try primary model
-            ├── Success → Return result
-            ├── 429/Quota/Exhausted → Return deterministic fallback (simulated data)
-            └── Other error → Retry (2x with 1s delay)
-                              ├── Success → Return result
-                              └── All retries failed → Return fallback (if enabled) or raise
-```
-
-- `LLM_FALLBACK_ENABLED=true` in `.env` enables deterministic simulation mode with hand-crafted mock responses.
-- `ExtractedSLAData` fallback: safe defaults (72h lead time, $500 delay penalty, 98% quality threshold).
-- `RiskAnalysisResult` fallback: conservative "Low" severity with "DelayEvent" risk.
-- Text fallback: `"[Fallback Response] The AI assistant is currently in offline mode..."`.
-- This allows every endpoint to be tested end-to-end without a live API key.
-
-### GraphDB Fallback Chain
-
-- `risk_engine_service.py` tries real GraphDB queries first; on failure, uses hard-coded mock SLA data.
-- `dashboard_service.py` and `chat_service.py` require GraphDB for full data, but the LLM fallback within pipelines keeps the system responsive.
-- The entire 3-tier architecture never throws unhandled exceptions — every layer has a safety net.
-
----
-
-## 8. Setup & Installation
+## 11. Local Setup & Installation
 
 ### Prerequisites
 
-- Python 3.12+
-- Ontotext GraphDB (optional — the system runs in fallback simulation mode without it)
+- **Python** `3.12+`
+- **Node.js** `18+` and **npm** (for the React Control Tower frontend)
+- **Ontotext GraphDB** `10.x+` running locally on port `7200` (optional for offline fallback testing; required for live SPARQL persistence and OWL reasoning)
 
-### 1. Clone & Navigate
+---
+
+### Step 1: Clone the Repository
 
 ```bash
-cd "AI-Supply-Chain-Risk-Engine"
+git clone https://github.com/YousefOsamaMahmoud/semantic-digital-twin-backend.git
+cd semantic-digital-twin-backend
 ```
 
-### 2. Create Virtual Environment
+---
+
+### Step 2: Configure Ontotext GraphDB (Knowledge Graph)
+
+1. Start **Ontotext GraphDB** (default: `http://localhost:7200`).
+2. Create a new repository (e.g., `supply-chain` or `SLA_DigitalTwin`) with **OWL-Horst (Optimized)** or **OWL2-RL** ruleset enabled.
+3. Import the base ontology file [`Data_Science/ontology/Semantic Digital Twin Project.rdf`](Data_Science/ontology/Semantic%20Digital%20Twin%20Project.rdf) into the repository (target graph `<http://example.org/ontology/>`).
+
+---
+
+### Step 3: Set Up the FastAPI Backend
 
 ```bash
+# Create and activate a virtual environment
 python -m venv venv
 
-# Activate (macOS/Linux)
+# Windows (PowerShell / CMD)
+venv\Scripts\activate
+
+# macOS / Linux
 source venv/bin/activate
 
-# Activate (Windows)
-venv\Scripts\activate
-```
-
-### 3. Install Dependencies
-
-```bash
+# Install pinned backend dependencies
 cd Backend
 pip install -r requirements.txt
 ```
 
-Or install the core packages manually:
-
-```bash
-pip install fastapi uvicorn sparqlwrapper python-dotenv pydantic pdfplumber \
-            langgraph langchain-core langchain-openai python-multipart
-```
-
-### 4. Configure Environment
-
-Create (or edit) `Backend/.env`:
+Create a `Backend/.env` file with your local configuration:
 
 ```env
-# GraphDB Configuration
+# ─── Ontotext GraphDB Configuration ──────────────────────────────────────────
 GRAPHDB_URL=http://localhost:7200
-GRAPHDB_REPO=SLA_DigitalTwin
-
-# Optional: GraphDB authentication
+GRAPHDB_REPO=supply-chain
 GRAPHDB_USER=
 GRAPHDB_PASSWORD=
 
-# LLM Configuration (optional — fallback mode works without it)
-OPENAI_API_KEY=mock-key-for-sandbox-presentation
+# ─── LLM / NLP Pipeline Configuration (Gemini / OpenRouter / OpenAI) ─────────
+LLM_API_KEY=your-api-key-here
+LLM_BASE_URL=https://openrouter.ai/api/v1
+OPENAI_API_KEY=your-api-key-here
 LLM_FALLBACK_ENABLED=true
 
-# Alternative: OpenRouter configuration
-# LLM_API_KEY=sk-or-v1-your-key-here
-# LLM_BASE_URL=https://openrouter.ai/api/v1
+# ─── Background IoT Telemetry Simulator ──────────────────────────────────────
+TELEMETRY_INTERVAL_SECONDS=30
 ```
 
-> **`LLM_FALLBACK_ENABLED=true`** enables deterministic simulation mode when no API key is configured or when the LLM provider returns a 429 quota error. This lets you test every endpoint end-to-end without a live API key.
+> **Note:** Setting `LLM_FALLBACK_ENABLED=true` allows the entire backend to run and pass all integration tests even without a live external LLM API key.
 
-> **`OPENAI_API_KEY`** is used as a fallback when `LLM_API_KEY` is not set. The `LLMClient._ensure_llm()` method checks `LLM_API_KEY` first, then falls back to `OPENAI_API_KEY`.
+#### Train / Generate Local ML Artifacts (First-Time Setup)
 
----
+Because `.pkl` binary artifacts are excluded via `.gitignore`, generate the local model binaries before starting the server if testing live ML predictions:
 
-## 9. Running the Server
+```bash
+# From the Backend/ directory
+python scripts/train_logistics_model.py
+python ../Machine_Learning/Procurement_Model/procurement_delay_predictor.py
+```
 
-### Start Uvicorn
+#### Start the FastAPI Server
 
 ```bash
 cd Backend
-python -m uvicorn main:app --reload --port 8001
+uvicorn main:app --reload --port 8001
 ```
 
-> Port `8001` avoids the Windows `[WinError 10013]` socket permission error on port 8000.
-
-### Open Swagger UI
-
-Navigate to [http://127.0.0.1:8001/docs](http://127.0.0.1:8001/docs) to explore and test all nine endpoints interactively with automatic OpenAPI documentation.
-
-### Smoke Test (Health Check)
-
-```bash
-curl http://localhost:8001/
-# {"message":"Hello Cavengers! The Backend is alive! (GraphDB Edition)"}
-```
-
-### Test the Risk Engine (Fallback Mode — no API key required)
-
-```bash
-curl -X POST http://localhost:8001/api/sandbox/simulate-iot \
-  -H "Content-Type: application/json" \
-  -d '{
-    "delivery_id": "DEL_001",
-    "estimated_delay_hours": 48,
-    "reason_code": "Weather_Delay",
-    "disruption_probability": 0.9,
-    "timestamp": "2026-03-05T15:30:00Z"
-  }'
-```
-
-### Test the Chat (Fallback Mode)
-
-```bash
-curl -X POST http://localhost:8001/api/dashboard/chat \
-  -H "Content-Type: application/json" \
-  -d '{"question": "What materials does Supplier 001 supply?"}'
-```
-
-### Test PDF Upload (Fallback Mode)
-
-```bash
-# Create a minimal fake SLA PDF and upload it
-# The guardrail will accept it in fallback mode and return simulated extraction data
-```
+- **API Health Check:** [http://localhost:8001/](http://localhost:8001/)
+- **Interactive Swagger UI:** [http://localhost:8001/docs](http://localhost:8001/docs)
 
 ---
 
-## 10. Testing
+### Step 4: Set Up & Launch the React Control Tower Frontend
 
-The backend includes a comprehensive suite of unit and integration tests located in the `tests/` directory to validate all components, ML predictions, and GraphDB semantic behaviors.
+Open a second terminal window:
 
-### Integration Test Suite (70 assertions, no external dependencies)
+```bash
+cd Frontend/my-app
+npm install
+npm start
+```
+
+The Control Tower UI will launch at **[http://localhost:3000](http://localhost:3000)** and automatically connect to the FastAPI backend on `http://localhost:8001`.
+
+---
+
+## 12. Testing & Verification
+
+Run the automated test suites from the `Backend/` directory:
 
 ```bash
 cd Backend
+
+# 1. Core 70-Assertion Integration Suite (Pydantic schemas, LangGraph topologies,
+#    SemanticLifter namespace guards, SPARQL escaping, LLM fallback resilience)
 python -m tests.test_integration
-```
 
-This suite validates:
-1. All 8 Pydantic model instantiations (including ML requests and responses)
-2. LLMClient singleton thread-safety
-3. Deterministic fallback generation for ExtractedSLAData, RiskAnalysisResult, and free-text
-4. Extraction pipeline topology (3 nodes + conditional edges)
-5. Risk engine pipeline topology (3 nodes + linear edges)
-6. Chat pipeline topology (4 nodes + conditional edges)
-7. Semantic lifter namespace enforcement (ontology prefix, banned namespace detection)
-8. Hours-to-days conversion (Integer Day Rule with floor to 1)
-9. SPARQL literal escaping (quotes, backslashes, newlines)
-10. URI builder helpers (supplier, contract, material)
-11. Dashboard endpoint wiring
-12. Sandbox endpoint wiring
-13. SPARQL injection safety (quotes in names properly escaped)
-14. Initial state construction for pipelines
-
-### GraphDB Connection Test Suite (requires running GraphDB)
-
-```bash
-cd Backend
+# 2. Live GraphDB Connection & OWL 2 Inference Verification
 python -m tests.test_graphdb_connection
-```
 
-This suite validates:
-1. GraphDB endpoint reachability
-2. Triple insertion (INSERT DATA + verification SELECT)
-3. OWL inference validation (detecting `sys:inferred` triples)
-
-### Predictive ML Integration Test Suite
-
-```bash
-cd Backend
+# 3. Pre-Order ML Risk Classifier & 109-Feature Pipeline Verification
 python -m tests.test_order_risk
-```
 
-This suite validates:
-1. ML asset lazy-loading and validation of pre-trained random forest classification models
-2. Feature engineering scaling and feature set integrity (109 columns)
-3. Risk level categorizations and delay duration estimation math
+# 4. ML + Backend End-to-End Integration Suite
+python -m tests.test_ml_backend_integration
 
-### Recalculation & Score Ingestion Test Suite
-
-```bash
-cd Backend
+# 5. Dynamic Supplier Reliability Score Recalculation Suite
 python -m tests.test_supplierScore_updates
-```
 
-This suite validates:
-1. Exponential delay penalty scoring and transaction recency decay math
-2. Integration of transaction Excel sheets to recalculate reliability scores in GraphDB
-
-### Supplier Fallback E2E Test Suite
-
-```bash
-cd Backend
+# 6. Primary-to-Backup Supplier Fallback & Partial Fulfillment E2E Suite
 python -m tests.test_fallback_e2e
 ```
 
-This suite validates:
-1. Primary supplier risk detection and fallback supplier routing
-2. Verification of alternate supplier assignment endpoints in the knowledge graph
-
 ---
 
-## 11. Project Structure
+## License
 
-```
-AI-Supply-Chain-Risk-Engine/
-│
-├── README.md                        # This file — comprehensive project documentation
-├── Historical_Transactions.xlsx     # Historical transaction log sheet
-│
-├── Backend/                         # Main backend application
-│   │
-│   ├── api/                         # Layer 1: API Controllers
-│   │   ├── __init__.py
-│   │   ├── sandbox.py               # SLA upload, PDF, HITL confirm, IoT, impacted products, PO prediction/placement
-│   │   └── dashboard.py             # Risk scores, compliance, fallback, active-sla, RBAC KPIs, alerts, assembly lines
-│   │
-│   ├── services/                    # Layer 2: Business Logic
-│   │   ├── __init__.py
-│   │   ├── llm_service.py           # LLMConfig, LLMClient singleton, SLA extraction LangGraph
-│   │   ├── lifting_service.py       # Semantic lifting (Pydantic → SPARQL INSERT), namespace guard
-│   │   ├── risk_engine_service.py   # Multi-agent risk engine LangGraph (IoT → alert)
-│   │   ├── chat_service.py          # NL-to-SPARQL chat agent LangGraph
-│   │   ├── dashboard_service.py     # Dashboard SPARQL query wrappers & KPI calculations
-│   │   ├── order_risk_service.py    # Purchase Order delay risk ML classification & feature engineering
-│   │   ├── supplier_evaluator_service.py # Batch supplier score calculation & Ontotext GraphDB persistence
-│   │   └── telemetry_simulator_service.py # Replays telemetry logs, runs logistics ML delay regressor
-│   │
-│   ├── knowledge_base/              # Layer 3: Data Access
-│   │   ├── __init__.py
-│   │   ├── connection.py            # Stateless GraphDB SPARQLWrapper singleton
-│   │   └── repository.py            # SPARQL INSERT/SELECT helpers, OWL inference query
-│   │
-│   ├── models/
-│   │   ├── __init__.py
-│   │   ├── schemas.py               # 8 Pydantic v2 models (SLAContract, OrderRiskPredictionRequest, etc.)
-│   │   └── ml_assets/               # Pre-trained ML classifiers & scalers
-│   │       ├── delay_prediction_model.pkl
-│   │       ├── scaler.pkl
-│   │       ├── model_features.json
-│   │       ├── logistics_delay_model.pkl
-│   │       └── logistics_model_features.json
-│   │
-│   ├── scripts/                     # Operational, testing, and training utilities
-│   │   ├── train_logistics_model.py # Logistics ML model training script
-│   │   ├── generate_telemetry_stream.py # Generator for telemetry stream logs
-│   │   ├── check_query.py           # SPARQL test verification utility
-│   │   └── inject_test_delay.py     # Database event simulation injections
-│   │
-│   ├── tests/                       # Unit & integration test suites
-│   │   ├── __init__.py
-│   │   ├── test_integration.py      # Core API & service integration test suite (70 assertions)
-│   │   ├── test_graphdb_connection.py # GraphDB verification suite (insert, select, OWL inference)
-│   │   ├── test_order_risk.py       # PO prediction ML integration test suite
-│   │   ├── test_supplierScore_updates.py # Supplier reliability recalculation tests
-│   │   └── test_fallback_e2e.py     # Supplier fallback assignment validation
-│   │
-│   ├── docs/
-│   │   └── How to run.txt              # Quick-start instructions
-│   │
-│   ├── main.py                      # FastAPI app bootstrap, router registration, health check
-│   ├── requirements.txt             # Pinned python package requirements
-│   ├── .env                         # Local environment configurations (GraphDB URIs, API keys)
-│   └── .gitignore                   # Local git ignore configurations
-│
-└── Frontend/my-app/                 # React-based digital twin dashboard app
-    ├── src/
-    │   ├── auth/                    # Role-based access control setup (roles.js)
-    │   ├── components/layout/       # App layout & Topbar (role selection, alert notifications dropdown)
-    │   ├── pages/                   # Main view panels
-    │   │   ├── Dashboard.jsx        # Role-based KPI stats, alerts log, and reliability graphs
-    │   │   ├── Suppliers.jsx        # Supplier profiles, compliance overview, and performance trends
-    │   │   ├── SLAUpload.jsx        # Contract PDF parsing, active SLA digital twin side-by-side comparison
-    │   │   ├── InventoryRisk.jsx    # Live inventory monitoring, assembly line selection, primary/fallback suppliers
-    │   │   ├── Alerts.jsx           # System alerts overview pane
-    │   │   └── ChatAssistant.jsx    # NL-to-SPARQL Chat Assistant panel
-    │   └── services/
-    │       └── api.js               # Frontend API service layer (FastAPI interaction client)
-```
+Distributed under the **MIT License**. See [`LICENSE`](./LICENSE) for full details.
 
----
-
-## 12. Master Status Dashboard
-
-### Overall Progress — 33/33 components complete
-
-| Layer | Component | Status | Notes |
-|---|---|---|---|
-| **Project Structure** | Repository layout, all `__init__.py` packages | Complete | Monorepo with clean separation |
-| **Project Structure** | `venv` + `requirements.txt` with pinned deps | Complete | Fully reproducible environment |
-| **Project Structure** | `.env` + `.gitignore` | Complete | Secrets excluded from git, temp files cleaned up |
-| **API Layer** | FastAPI app bootstrap with `load_dotenv()` | Complete | Env vars loaded at import time |
-| **API Layer** | Router registration (sandbox + dashboard) | Complete | 2 routers, 22 endpoints |
-| **API Layer** | Health-check endpoint `GET /` | Complete | Returns alive message |
-| **API Layer** | `POST /api/sandbox/upload-sla` | Complete | Delegates to `lifting_service.save_sla_contract()` |
-| **API Layer** | `GET /api/sandbox/impacted-products` | Complete | Delegates to `dashboard_service.get_impacted_products()` |
-| **API Layer** | `POST /api/sandbox/upload-pdf` | Complete | PDF → LLM extraction → structured JSON |
-| **API Layer** | `POST /api/sandbox/confirm-sla` | Complete | HITL gate → persists to GraphDB |
-| **API Layer** | `POST /api/sandbox/simulate-iot` | Complete | IoT telemetry → risk engine → ManagerAlert |
-| **API Layer** | `GET /api/dashboard/risk-scores` | Complete | OWL-inferred RED/GREEN risk status |
-| **API Layer** | `GET /api/dashboard/compliance-alerts` | Complete | SLA terms from knowledge graph with grace periods |
-| **API Layer** | `GET /api/dashboard/fallback-options/{id}` | Complete | Alternative suppliers ranked by reliability |
-| **API Layer** | `POST /api/dashboard/chat` | Complete | NL question → SPARQL → human answer |
-| **API Layer** | `GET /api/dashboard/active-sla` | Complete | Fetches active SLA details for UI comparison |
-| **Services Layer** | `LLMClient` with 429/quota fallback | Complete | Thread-safe singleton, 2x retry, deterministic fallback |
-| **Services Layer** | `LLMConfig` with env-var configuration | Complete | Provider-agnostic (OpenRouter, OpenAI, etc.) |
-| **Services Layer** | SLA Extraction LangGraph (3 nodes + retry) | Complete | Guardrail → Extractor → Validator (self-correcting) |
-| **Services Layer** | Semantic Lifting (JSON → RDF) | Complete | Pydantic to SPARQL INSERT, namespace enforcement |
-| **Services Layer** | Risk Engine LangGraph (3 nodes) | Complete | IoT → SLA fetch → analysis → alert routing |
-| **Services Layer** | NL-to-SPARQL Chat Agent (4 nodes) | Complete | Guardrail → Developer → Database → Customer Service |
-| **Services Layer** | Dashboard Service (SPARQL query wrappers) | Complete | Isolates SPARQL from API layer |
-| **Services Layer** | Predictive ML (`order_risk_service.py`) | Complete | Random Forest classifier for PO delay risk |
-| **Services Layer** | Telemetry Replay (`telemetry_simulator.py`) | Complete | Background thread streaming IoT logs + ML delay predictions |
-| **Data Models** | 8 Pydantic v2 schemas | Complete | SLAContract, ConfirmedSLA, IoTTelemetryEvent, OrderRisk request/response, etc. |
-| **Knowledge Base** | GraphDB connection (SPARQLWrapper singleton) | Complete | Stateless, env-configured, no session management |
-| **Knowledge Base** | Repository (INSERT + OWL inference query) | Complete | `create_contract_graph()`, `find_impacted_products_by_supplier_delay()` |
-| **Testing** | Unit & Integration suites (test files) | Complete | test_integration, test_graphdb, test_order_risk, test_fallback_e2e, etc. |
-| **Documentation** | README, How to run.txt | Complete | Standard documentation files (redundant plans cleaned up) |
-| **Frontend UI** | React dashboard with role selection (RBAC) | Complete | Role-specific views (Procurement, Production, Logistics, Admin) |
-| **Frontend UI** | Digital Twin SLA Side-by-Side Comparison | Complete | Interactive comparison of uploaded SLA contract against active database |
-| **Frontend UI** | Live Inventory & Supplier Fallback assignment | Complete | Supports details modals, search, and fallback updates |
-
-### Architecture Compliance
-
-| Rule | Status | Detail |
-|---|---|---|
-| API must NOT import `knowledge_base` directly | ✅ Enforced | Zero `knowledge_base` imports in `api/` layer |
-| API must delegate to Services | ✅ Enforced | All endpoints call `services.*` only |
-| Services may import `knowledge_base` | ✅ Correct | `lifting_service`, `dashboard_service`, `chat_service`, `order_risk_service` |
-| Blocking calls must use `run_in_executor` | ✅ Enforced | All blocking sandbox & ML endpoints wrapped in run_in_executor |
-| `load_dotenv()` must be called at startup | ✅ Enforced | Called in `main.py` before any import |
-| All SPARQL must use project namespace | ✅ Enforced | Golden Rule #2 in `repository.py` |
-| Named graph separation (ontology vs data) | ✅ Enforced | Golden Rule in `repository.py` |
-
-### Traffic Light Summary
-
-| Status | Count | Items |
-|---|---|---|
-| ✅ **Complete** | 33/33 | All layers, endpoints, pipelines, ML models, tests, docs, and React frontend pages |
-| 🟡 **In Progress** | 0 | — |
-| 🔴 **Not Started** | 0 | — |
-| 📋 **Future** | — | Streamlit sandbox frontend, MQTT physical IoT bridge integration |
-
----
-
-> **Bottom Line:** The supply chain digital twin platform is fully implemented, production-ready, and architecture-compliant. All backend services, including the four LangGraph pipelines (PDF extraction, semantic lifting, risk engine, NL-to-SPARQL chat) and the Random Forest PO risk predictor, are operational with industrial-grade resilience (double-checked lock singleton, 429/quota fallback, deterministic simulation mode). The background telemetry simulator streams real logistics data and predicts delay hours dynamically, keeping the dashboard "live". The React frontend enforces role-based access control (Procurement, Production, Logistics) with dedicated views, fallback assignment, and side-by-side SLA digital twin comparison. **All 33 components are complete.**
+**Copyright (c) 2026 Yousef Osama Mahmoud**
